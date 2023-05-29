@@ -23,7 +23,7 @@ This repo holds files and info needed to use [Donkey](https://github.com/theTwis
 	- You can acquired these via [MCC](https://store.steampowered.com/app/976730/).
 
 - `map_variants\*.mvar`
-	- Eventually I'll create a command to generate these.
+	- You can generate these with `net_build_map_variant` in [Donkey](https://github.com/theTwist84/ManagedDonkey)
 
 ## Other Files
 - `init.txt`
