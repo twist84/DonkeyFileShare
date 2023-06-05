@@ -33,3 +33,8 @@ This repo holds files and info needed to use [Donkey](https://github.com/theTwis
 	- The user can use any filename and load that file via `load_preferences_from_file <filename.txt>`
 	- This is being worked on and updated all the time.
 	- Eventually I'll create a command to generate this.
+
+- `customization.txt`
+	- The user can use any filename and load that file via `load_customization_from_file <filename.txt>`
+	- This is being worked on and updated all the time.
+	- If no customization file exists a `customization_info.txt` will be created
