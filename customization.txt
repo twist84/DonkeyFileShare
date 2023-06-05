@@ -1,0 +1,7 @@
+helmet: base
+chest: base
+shoulders: base
+arms: base
+legs: base
+acc: flashlight
+pelvis: base
