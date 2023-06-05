@@ -8,7 +8,7 @@ chest: base
 shoulders: base
 arms: base
 legs: base
-acc: base
+acc: flashlight
 pelvis: base
 
 helmet:
