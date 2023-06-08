@@ -1,15 +1,57 @@
 This file serves as a reference to what a customization file contains
 
 Example usage:
-<armor_region_name>: <armor_name>
 
-helmet: base
-chest: base
-shoulders: base
-arms: base
-legs: base
-acc: flashlight
-pelvis: base
+consumables[<consumable_index(0 - 3)>]: <consumable_name>
+consumables[0]: empty
+consumables[1]: empty
+consumables[2]: empty
+consumables[3]: empty
+
+colors[<color_type_name>]: #RGB
+colors[primary]: #FF0000
+colors[secondary]: #0000FF
+colors[visor]: #0000FF
+colors[lights]: #00F00F
+colors[holo]: #0F0F00
+
+armor[<armor_region_name>]: <armor_name>
+armor[helmet]: base
+armor[chest]: base
+armor[shoulders]: base
+armor[arms]: base
+armor[legs]: base
+armor[acc]: flashlight
+armor[pelvis]: base
+
+consumable:
+	empty
+	jammer
+	powerdrain
+	invisibility
+	invisibility_vehicle
+	bubbleshield
+	superflare
+	regenerator
+	tripmine
+	auto_turret
+	deployable_cover
+	forced_reload
+	concussive_blast
+	tank_mode
+	mag_pulse
+	hologram
+	reactive_armor
+	bomb_run
+	armor_lock
+	adrenaline
+	lightning_strike
+	scrambler
+	weapon_jammer
+	ammo_pack
+	consumable_vision
+	bubbleshield_tutorial
+	consumable_vision_tutorial
 
 helmet:
 	base
