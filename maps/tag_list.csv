@@ -17,7 +17,7 @@
 0x00000010,objects\levels\ui\mainmenu\menu_forklift\menu_forklift
 0x00000011,objects\levels\ui\mainmenu\menu_banshee\menu_banshee
 0x00000012,objects\levels\ui\mainmenu\menu_wraith\menu_wraith
-0x00000013,objects\weapons\rifle\battle_rifle\bitmaps\gun_microbump
+0x00000013,rasterizer_cache_file_globals
 0x00000014,hf2p\global_textures_list
 0x00000015,hf2p\global_files_list
 0x00000016,globals\globals
