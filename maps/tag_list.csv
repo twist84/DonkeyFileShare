@@ -1429,7 +1429,7 @@
 0x00000594,objects\weapons\grenade\claymore_grenade\fx\fragment\projectile
 0x00000595,shaders\light_volume
 0x00000596,shaders\light_volume_templates\_0_8_0
-0x00000597,fx\lense_fkares\_bitmaps\light_volume_glow
+0x00000597,fx\lens_flares\_bitmaps\light_volume_glow
 0x00000598,shaders\light_volume_templates\_0_8_0
 0x00000599,shaders\light_volume_templates\_0_8_0
 0x0000059A,shaders\light_volume_options\global_light_volume
