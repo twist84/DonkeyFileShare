@@ -1,0 +1,569 @@
+; AVAILABLE FUNCTIONS:
+
+(help)
+
+prints this output.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(script_doc)
+
+saves a file called hs_doc.txt with parameters for all script commands.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(breakpoint <string>)
+
+If breakpoints are enabled, pause execution when this statement is hit (displaying the given message).
+NETWORK SAFE: Yes
+
+
+(set)
+
+set the value of a global variable.
+NETWORK SAFE: Yes (depending on result)
+
+
+(close_game)
+
+closes the game.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(script_start <string>)
+
+debug script launching: starts a scenario script by name.
+NETWORK SAFE: No, for mainmenu only
+
+
+(game_splitscreen <long>)
+
+debug map launching: sets the number of multiplayer splitscreen players for the next map.
+NETWORK SAFE: No, for mainmenu only
+
+
+(game_coop_players <long>)
+
+debug map launching: sets the number of coop players for the next map.
+NETWORK SAFE: No, for mainmenu only
+
+
+(game_start <string>)
+
+debug map launching: starts a game on the specified map.
+NETWORK SAFE: No, for mainmenu only
+
+
+(main_menu)
+
+goes back to the main menu
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(net_session_create <string> <string>)
+
+<ui_game_mode> <advertisement_mode> creates a session to play
+NETWORK SAFE: No, for mainmenu only
+
+
+(net_session_add <string>)
+
+<ip:port> adds a session from the given ip:port to the local games browser 
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(net_test_ping)
+
+network test: sends a ping
+NETWORK SAFE: Yes
+
+
+(net_test_ping_directed <string>)
+
+<ip:port> network test: sends a ping to a specific address
+NETWORK SAFE: Yes
+
+
+(net_test_text_chat <string>)
+
+<message> network test: sends a message
+NETWORK SAFE: Yes
+
+
+(net_test_text_chat_directed <string> <string>)
+
+<ip:port> <message> network test: sends a message to a specific address
+NETWORK SAFE: Yes
+
+
+(net_test_map_name <string>)
+
+network test: sets the name of the scenario to play
+NETWORK SAFE: Yes
+
+
+(net_test_variant <string>)
+
+network test: sets the game variant to play
+NETWORK SAFE: Yes
+
+
+(net_test_session_mode <string>)
+
+network test: sets the session mode to play
+NETWORK SAFE: Yes
+
+
+(net_test_ui_game_mode <string>)
+
+network test: sets the ui game mode to play
+NETWORK SAFE: No, for mainmenu only
+
+
+(net_test_advertisement_mode <string>)
+
+network test: sets the advertisement mode to play
+NETWORK SAFE: No, for mainmenu only
+
+
+(net_test_game_variant_parameter <string> <long>)
+
+network test: sets a parameter of the current game variant
+NETWORK SAFE: No, for mainmenu only
+
+
+(net_build_game_variant <string>)
+
+writes the current game variant to a file
+NETWORK SAFE: Yes
+
+
+(net_verify_game_variant <string>)
+
+verifies the contents of a game variant file
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(net_load_and_use_game_variant <string>)
+
+loads the contents of a game variant file and submits to networking for use in the current game
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(net_verify_packed_game_variant <string>)
+
+verifies the contents of a packed game variant file
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(net_load_and_use_packed_game_variant <string>)
+
+loads the contents of a packed game variant file and submits to networking for use in the current game
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(net_build_map_variant <string>)
+
+writes the current map variant to a file
+NETWORK SAFE: Yes
+
+
+(net_verify_map_variant <string>)
+
+verifies the contents of a packed map variant file
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(net_load_and_use_map_variant <string>)
+
+loads the contents of a packed map variant file and submits to networking for use in the current game
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(net_verify_packed_map_variant <string>)
+
+verifies the contents of a packed map variant file
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(net_load_and_use_packed_map_variant <string>)
+
+loads the contents of a packed map variant file and submits to networking for use in the current game
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_export_variant_settings <string>)
+
+export the current game engine variant settings to the specified text file
+NETWORK SAFE: No
+
+
+(alert_carry <long>)
+
+<user_index> raise/lower player weapon toggle
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(online_set_is_connected_to_live <boolean>)
+
+sets connected to live
+NETWORK SAFE: Yes
+
+
+(online_user_set_name <string>)
+
+sets the name of the first user
+NETWORK SAFE: Yes
+
+
+(mp_game_won <long>)
+
+<mp_team> given a team index, declares the game a victory for that team and a loss for all others
+NETWORK SAFE: Yes
+
+
+(load_preferences_from_file <string>)
+
+<preferences filename> loads preferences from the specified file
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(load_customization_from_file <string>)
+
+<customization filename> loads customization from the specified file
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(cheat_all_powerups)
+
+drops all powerups near player
+NETWORK SAFE: Yes
+
+
+(cheat_all_vehicles)
+
+drops all vehicles on player
+NETWORK SAFE: Yes
+
+
+(cheat_all_weapons)
+
+drops all weapons near player
+NETWORK SAFE: Yes
+
+
+(cheat_teleport_to_camera)
+
+teleports player to camera location
+NETWORK SAFE: Yes
+
+
+(debug_menu_rebuild)
+
+Reparses the debug menu from the text file.
+
+
+(drop <string>)
+
+drops the named tag e.g. objects\vehicles\banshee\banshee.vehicle
+NETWORK SAFE: Yes, for objects
+
+
+(drop_variant <string> <string>)
+
+drops the named tag e.g. objects\vehicles\banshee\banshee.vehicle using the specified variant name
+
+
+
+(drop_permutation <string> <string>)
+
+drops the named tag e.g. objects\characters\brute\brute.biped using the specified permutation. permutations are specified as a comma-delimited string of region=permutation pairs (e.g. region1=permutation1,region2=permutation2).
+
+
+
+(director_debug_camera <boolean>)
+
+enable/disable camera debugging
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(camera_control <boolean>)
+
+toggles script control of the camera.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(camera_set_mode <user_index> <mode_index>)
+
+sets user's camera perspective
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+; AVAILABLE EXTERNAL GLOBALS:
+
+(<real> director_camera_speed_scale)
+
+(<real> camera_fov)
+
+(<real> camera_yaw_scale)
+
+(<real> camera_pitch_scale)
+
+(<real> camera_forward_scale)
+
+(<real> camera_side_scale)
+
+(<real> camera_up_scale)
+
+(<real> flying_camera_maximum_boost_speed)
+
+(<real> flying_camera_movement_delay)
+
+(<boolean> display_framerate)
+
+(<boolean> display_frame_deltas)
+
+(<boolean> net_skip_countdown)
+
+(<boolean> net_experimental)
+
+(<boolean> net_show_latency_and_framerate_metrics_on_chud)
+
+(<boolean> net_fake_latency_and_framerate_metrics_on_chud)
+
+(<boolean> cheat_deathless_player)
+
+(<boolean> cheat_valhalla)
+
+(<boolean> cheat_jetpack)
+
+(<boolean> cheat_infinite_ammo)
+
+(<boolean> cheat_bottomless_clip)
+
+(<boolean> cheat_bump_possession)
+
+(<boolean> cheat_super_jump)
+
+(<boolean> cheat_reflexive_damage_effects)
+
+(<boolean> cheat_medusa)
+
+(<boolean> cheat_omnipotent)
+
+(<boolean> cheat_controller)
+
+(<boolean> cheat_chevy)
+
+(<boolean> cheat_porcupine)
+
+(<boolean> cheat_infinite_equipment_energy)
+
+(<boolean> console_dump_to_debug_display)
+
+(<real> render_debug_depth_render_scale_r)
+
+(<real> render_debug_depth_render_scale_g)
+
+(<real> render_debug_depth_render_scale_b)
+
+(<long> render_debug_depth_render)
+
+(<boolean> debug_trigger_volumes)
+
+(<boolean> debug_pvs_activation)
+
+(<boolean> debug_objects_player_only)
+
+(<boolean> render_water)
+
+(<boolean> render_water_tessellated)
+
+(<boolean> render_water_interaction)
+
+(<boolean> render_water_wireframe)
+
+(<boolean> debug_structure_markers)
+
+(<boolean> debug_structure_surface_references)
+
+(<boolean> debug_structure_soft_ceilings)
+
+(<boolean> debug_structure_soft_kill)
+
+(<boolean> debug_structure_slip_surfaces)
+
+(<boolean> debug_structure_cluster_skies)
+
+(<boolean> debug_structure_invisible)
+
+(<boolean> debug_structure)
+
+(<boolean> debug_structure_automatic)
+
+(<boolean> debug_structure_unique_colors)
+
+(<boolean> debug_structure_complexity)
+
+(<boolean> debug_structure_seam_edges)
+
+(<boolean> debug_instanced_geometry)
+
+(<boolean> debug_instanced_geometry_bounding_spheres)
+
+(<boolean> debug_instanced_geometry_names)
+
+(<boolean> debug_instanced_geometry_vertex_counts)
+
+(<boolean> debug_instanced_geometry_collision_geometry)
+
+(<boolean> debug_zone_set_critical_portals)
+
+(<boolean> debug_structure_water)
+
+(<boolean> water_physics_debug)
+
+(<boolean> debug_objects)
+
+(<boolean> debug_objects_early_movers)
+
+(<boolean> debug_objects_sound_spheres)
+
+(<boolean> debug_objects_indices)
+
+(<boolean> debug_objects_programmer)
+
+(<boolean> debug_objects_garbage)
+
+(<boolean> debug_objects_names)
+
+(<boolean> debug_objects_full_names)
+
+(<boolean> debug_objects_active_nodes)
+
+(<boolean> debug_objects_animation_times)
+
+(<boolean> debug_objects_functions)
+
+(<boolean> debug_objects_position_velocity)
+
+(<boolean> debug_objects_origin)
+
+(<boolean> debug_objects_root_node)
+
+(<boolean> debug_objects_bounding_spheres)
+
+(<boolean> debug_objects_attached_bounding_spheres)
+
+(<boolean> debug_objects_dynamic_render_bounding_spheres)
+
+(<boolean> debug_objects_model_targets)
+
+(<boolean> debug_objects_collision_models)
+
+(<boolean> debug_objects_profile_times)
+
+(<boolean> debug_objects_water_physics)
+
+(<boolean> debug_objects_physics_models)
+
+(<boolean> debug_objects_contact_points)
+
+(<boolean> debug_objects_constraints)
+
+(<boolean> debug_objects_vehicle_physics)
+
+(<boolean> debug_objects_mass)
+
+(<boolean> debug_objects_pathfinding)
+
+(<boolean> debug_objects_node_bounds)
+
+(<boolean> debug_objects_animation)
+
+(<boolean> debug_objects_physics_control_node)
+
+(<boolean> debug_objects_biped_autoaim_pills)
+
+(<boolean> debug_objects_ground_plane)
+
+(<boolean> debug_objects_movement_mode)
+
+(<boolean> debug_biped_throttle)
+
+(<boolean> debug_objects_unit_pathfinding_surface)
+
+(<boolean> debug_objects_pendulum)
+
+(<boolean> debug_objects_unit_vectors)
+
+(<boolean> debug_objects_unit_seats)
+
+(<boolean> debug_objects_unit_mouth_apeture)
+
+(<boolean> debug_objects_unit_firing)
+
+(<boolean> debug_objects_unit_acceleration)
+
+(<boolean> debug_objects_unit_camera)
+
+(<boolean> debug_sound_timing)
+
+(<boolean> debug_duckers)
+
+(<boolean> debug_sound_listeners)
+
+(<boolean> debug_sound)
+
+(<boolean> debug_sound_manager_channels)
+
+(<real> havok_collision_tolerance)
+
+(<long> havok_debug_mode)
+
+(<long> havok_thread_count)
+
+(<long> havok_environment_type)
+
+(<real> havok_shape_radius)
+
+(<boolean> havok_jumping_beans)
+
+(<boolean> havok_disable_deactivation)
+
+(<real> havok_deactivation_reference_distance)
+
+(<boolean> havok_weld_environment)
+
+(<boolean> havok_batch_add_entities_disabled)
+
+(<boolean> havok_shape_cache)
+
+(<boolean> havok_shape_cache_debug)
+
+(<boolean> havok_enable_back_stepping)
+
+(<boolean> havok_enable_sweep_shapes)
+
+(<boolean> havok_display_stats)
+
+(<boolean> havok_initialize_profiling)
+
+(<boolean> impacts_debug)
+
+(<boolean> proxies_debug)
+
+(<boolean> collision_damage_debug)
+
+(<boolean> havok_play_impact_effects)
+
+(<boolean> havok_play_biped_impact_effects)
+
+(<boolean> physics_debug)
+
+(<boolean> havok_cleanup_inactive_agents)
+
+(<boolean> havok_memory_always_system)
+
+(<boolean> contrail_render_enable)
+

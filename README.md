@@ -28,6 +28,10 @@ This repo holds files and info needed to use [Donkey](https://github.com/theTwis
 ## Other Files
 - `init.txt`
 	- This is just like the one you can find in the tools but it uses [Donkey](https://github.com/theTwist84/ManagedDonkey) commands, some commands are the same between [Donkey](https://github.com/theTwist84/ManagedDonkey) and the tools
+- `hs_doc.txt`
+	- This is just like the one you can find in the tools but it uses [Donkey](https://github.com/theTwist84/ManagedDonkey) commands, some commands are the same between [Donkey](https://github.com/theTwist84/ManagedDonkey) and the tools
+- `debug_menu_init.txt`
+	- This is just like the one you can find in the tools but it uses [Donkey](https://github.com/theTwist84/ManagedDonkey) commands, some commands are the same between [Donkey](https://github.com/theTwist84/ManagedDonkey) and the tools
 
 - `preferences.txt`
 	- The user can use any filename and load that file via `load_preferences_from_file <filename.txt>`
