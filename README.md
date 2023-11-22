@@ -1,6 +1,6 @@
 # DonkeyFileShare
 
-This repo holds files and info needed to use [Donkey](https://github.com/theTwist84/ManagedDonkey)
+This repo holds files and info needed to use [Donkey](https://github.com/twist84/ManagedDonkey)
 
 ### Dev Generated Files
 - `maps\tag_list.csv`
@@ -17,21 +17,21 @@ This repo holds files and info needed to use [Donkey](https://github.com/theTwis
 ### User Generated Files
 - `game_variants\*.bin`
 	- You can acquired these via [MCC](https://store.steampowered.com/app/976730/).
-	- You can generate these with `net_build_game_variant` in [Donkey](https://github.com/theTwist84/ManagedDonkey) ~or [Halo 3 Mod Tools - MCC](https://store.steampowered.com/app/1695791/)~ the tools crash (343 pls fix).
+	- You can generate these with `net_build_game_variant` in [Donkey](https://github.com/twist84/ManagedDonkey) ~or [Halo 3 Mod Tools - MCC](https://store.steampowered.com/app/1695791/)~ the tools crash (343 pls fix).
 
 - `hopper_game_variants\*.bin`
 	- You can acquired these via [MCC](https://store.steampowered.com/app/976730/).
 
 - `map_variants\*.mvar`
-	- You can generate these with `net_build_map_variant` in [Donkey](https://github.com/theTwist84/ManagedDonkey)
+	- You can generate these with `net_build_map_variant` in [Donkey](https://github.com/twist84/ManagedDonkey)
 
 ## Other Files
 - `init.txt`
-	- This is just like the one you can find in the tools but it uses [Donkey](https://github.com/theTwist84/ManagedDonkey) commands, some commands are the same between [Donkey](https://github.com/theTwist84/ManagedDonkey) and the tools
+	- This is just like the one you can find in the tools but it uses [Donkey](https://github.com/twist84/ManagedDonkey) commands, some commands are the same between [Donkey](https://github.com/twist84/ManagedDonkey) and the tools
 - `hs_doc.txt`
-	- This is just like the one you can find in the tools but it uses [Donkey](https://github.com/theTwist84/ManagedDonkey) commands, some commands are the same between [Donkey](https://github.com/theTwist84/ManagedDonkey) and the tools
+	- This is just like the one you can find in the tools but it uses [Donkey](https://github.com/twist84/ManagedDonkey) commands, some commands are the same between [Donkey](https://github.com/twist84/ManagedDonkey) and the tools
 - `debug_menu_init.txt`
-	- This is just like the one you can find in the tools but it uses [Donkey](https://github.com/theTwist84/ManagedDonkey) commands, some commands are the same between [Donkey](https://github.com/theTwist84/ManagedDonkey) and the tools
+	- This is just like the one you can find in the tools but it uses [Donkey](https://github.com/twist84/ManagedDonkey) commands, some commands are the same between [Donkey](https://github.com/twist84/ManagedDonkey) and the tools
 
 - `preferences.txt`
 	- The user can use any filename and load that file via `load_preferences_from_file <filename.txt>`
