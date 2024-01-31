@@ -1,3 +1,6 @@
+<menu name = "Options">
+	<item type = command name = "Exit Game" variable = "exit_game">
+</menu>
 <menu name = "Cheats">
 	<menu name = "Drop Items">
 		<menu name = "Vehicles">
