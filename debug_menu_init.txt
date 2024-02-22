@@ -1,6 +1,3 @@
-<menu name = "Options">
-	<item type = command name = "Exit Game" variable = "exit_game">
-</menu>
 <menu name = "Cheats">
 	<menu name = "Drop Items">
 		<menu name = "Vehicles">
@@ -1738,7 +1735,6 @@
 	<item type = global name = "dialogue datamining enabled" variable = "ai_dialogue_datamine_enable">
 	<item type = command name = "cheat_all_weapons" variable = "cheat_all_weapons">
 </menu>
-
 <menu name = "Menu">
 	<item type = command name = "Reparse Debug Menu" variable = "debug_menu_rebuild">
 </menu>
