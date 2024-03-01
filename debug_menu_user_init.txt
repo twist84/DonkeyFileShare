@@ -1,3 +1,4 @@
 <menu name = "Options">
+	<item type = command name = "Load Preferences (preferences.txt)" variable = "load_preferences_from_file preferences.txt">
 	<item type = command name = "Exit Game" variable = "exit_game">
 </menu>
