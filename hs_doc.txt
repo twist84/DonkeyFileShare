@@ -24,9 +24,9 @@ set the value of a global variable.
 NETWORK SAFE: Yes (depending on result)
 
 
-(close_game)
+(exit_game)
 
-closes the game.
+exits the game.
 NETWORK SAFE: Unknown, assumed unsafe
 
 
@@ -36,22 +36,64 @@ debug script launching: starts a scenario script by name.
 NETWORK SAFE: No, for mainmenu only
 
 
+(map_name <string>)
+
+debug map launching: sets the multiplayer engine for the next map.
+No, for init.txt only
+
+
+(game_multiplayer <string>)
+
+debug map launching: sets the multiplayer engine for the next map.
+No, for init.txt only
+
+
 (game_splitscreen <long>)
 
 debug map launching: sets the number of multiplayer splitscreen players for the next map.
-NETWORK SAFE: No, for mainmenu only
+NETWORK SAFE: No, for init.txt only
+
+
+(game_difficulty <game_difficulty>)
+
+debug map launching: sets the difficulty of the next map.
+NETWORK SAFE: No, for init.txt only
 
 
 (game_coop_players <long>)
 
 debug map launching: sets the number of coop players for the next map.
-NETWORK SAFE: No, for mainmenu only
+NETWORK SAFE: No, for init.txt only
+
+
+(game_initial_bsp <long>)
+
+debug map launching: sets the initial bsp for the next map.
+NETWORK SAFE: No, for init.txt only
+
+
+(game_tick_rate <long>)
+
+debug map launching: sets the tick rate for the next map.
+NETWORK SAFE: No, for init.txt only
 
 
 (game_start <string>)
 
 debug map launching: starts a game on the specified map.
-NETWORK SAFE: No, for mainmenu only
+NETWORK SAFE: No, for init.txt only
+
+
+(game_won)
+
+causes the player to successfully finish the current level and move to the next
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_revert)
+
+causes the player to revert to their previous saved game (for testing and cinematic skipping only please!)
+NETWORK SAFE: Unknown, assumed unsafe
 
 
 (main_menu)
@@ -222,6 +264,12 @@ NETWORK SAFE: Yes
 NETWORK SAFE: Yes
 
 
+(mp_debug_goal_object_boundary_geometry <bool>)
+
+toggle debug geometry for multiplayer goal objects
+NETWORK SAFE: No
+
+
 (load_preferences_from_file <string>)
 
 <preferences filename> loads preferences from the specified file
@@ -299,7 +347,59 @@ sets user's camera perspective
 NETWORK SAFE: Unknown, assumed unsafe
 
 
+(debug_camera_save)
+
+saves the camera position and facing.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(debug_camera_load)
+
+loads the saved camera position and facing.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(crash <string>)
+
+crashes (for debugging).
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(status)
+
+prints the value of all global status variables.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(player_force_mode <string_id>)
+
+force your will upon the player
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(test_download_storage_file <string> <string>)
+
+<url> <filename> downloads a file from LSP to the client
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(lsp_info_get)
+
+gets the LSP server info
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(lsp_info_set <string>)
+
+<ip:port> sets the LSP server address and port
+NETWORK SAFE: Unknown, assumed unsafe
+
+
 ; AVAILABLE EXTERNAL GLOBALS:
+
+(<boolean> debug_no_drawing)
+
+(<boolean> terminal_render)
 
 (<real> director_camera_speed_scale)
 
@@ -361,6 +461,8 @@ NETWORK SAFE: Unknown, assumed unsafe
 
 (<boolean> console_dump_to_debug_display)
 
+(<boolean> console_pauses_game)
+
 (<real> render_debug_depth_render_scale_r)
 
 (<real> render_debug_depth_render_scale_g)
@@ -368,6 +470,8 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<real> render_debug_depth_render_scale_b)
 
 (<long> render_debug_depth_render)
+
+(<boolean> render_default_lighting)
 
 (<boolean> debug_trigger_volumes)
 
@@ -422,6 +526,12 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<boolean> debug_structure_water)
 
 (<boolean> water_physics_debug)
+
+(<boolean> debug_input)
+
+(<boolean> debug_input_abstraction)
+
+(<boolean> debug_input_mouse_state)
 
 (<boolean> debug_objects)
 
@@ -517,53 +627,39 @@ NETWORK SAFE: Unknown, assumed unsafe
 
 (<boolean> debug_sound_manager_channels)
 
-(<real> havok_collision_tolerance)
-
-(<long> havok_debug_mode)
-
-(<long> havok_thread_count)
-
-(<long> havok_environment_type)
-
-(<real> havok_shape_radius)
-
-(<boolean> havok_jumping_beans)
-
-(<boolean> havok_disable_deactivation)
-
-(<real> havok_deactivation_reference_distance)
-
-(<boolean> havok_weld_environment)
-
-(<boolean> havok_batch_add_entities_disabled)
-
-(<boolean> havok_shape_cache)
-
-(<boolean> havok_shape_cache_debug)
-
-(<boolean> havok_enable_back_stepping)
-
-(<boolean> havok_enable_sweep_shapes)
-
-(<boolean> havok_display_stats)
-
-(<boolean> havok_initialize_profiling)
-
-(<boolean> impacts_debug)
-
-(<boolean> proxies_debug)
-
-(<boolean> collision_damage_debug)
-
-(<boolean> havok_play_impact_effects)
-
-(<boolean> havok_play_biped_impact_effects)
-
-(<boolean> physics_debug)
-
-(<boolean> havok_cleanup_inactive_agents)
-
-(<boolean> havok_memory_always_system)
-
 (<boolean> contrail_render_enable)
+
+(<boolean> soft_ceilings_disable)
+
+(<boolean> cubemap_debug)
+
+(<boolean> debug_camera_projection)
+
+(<real> render_screenspace_center)
+
+(<real> ui_time_scale)
+
+(<boolean> render_thread_enable)
+
+(<boolean> game_paused)
+
+(<real> game_speed)
+
+(<boolean> game_time_lock)
+
+(<boolean> game_time_statistics)
+
+(<boolean> static_fp_fov)
+
+(<boolean> centered_crosshair)
+
+(<boolean> reduce_widescreen_fov_during_cinematics)
+
+(<real> render_debug_aspect_ratio_scale)
+
+(<boolean> render_debug_force_4x3_aspect_ratio)
+
+(<boolean> render_pc_specular)
+
+(<boolean> render_pc_albedo_lighting)
 
