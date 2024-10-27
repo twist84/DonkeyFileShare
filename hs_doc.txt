@@ -36,16 +36,28 @@ debug script launching: starts a scenario script by name.
 NETWORK SAFE: No, for mainmenu only
 
 
+(map_reset)
+
+starts the map from the beginning.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(map_reset_random)
+
+starts the map from the beginning with a new random seed.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
 (map_name <string>)
 
 debug map launching: sets the multiplayer engine for the next map.
-No, for init.txt only
+NETWORK SAFE: No, for init.txt only
 
 
 (game_multiplayer <string>)
 
 debug map launching: sets the multiplayer engine for the next map.
-No, for init.txt only
+NETWORK SAFE: No, for init.txt only
 
 
 (game_splitscreen <long>)
@@ -57,6 +69,18 @@ NETWORK SAFE: No, for init.txt only
 (game_difficulty <game_difficulty>)
 
 debug map launching: sets the difficulty of the next map.
+NETWORK SAFE: No, for init.txt only
+
+
+(game_active_primary_skulls <long>)
+
+debug map launching: sets the active primary skulls of the next map.
+NETWORK SAFE: No, for init.txt only
+
+
+(game_active_secondary_skulls <long>)
+
+debug map launching: sets the active secondary skulls of the next map.
 NETWORK SAFE: No, for init.txt only
 
 
@@ -84,6 +108,12 @@ debug map launching: starts a game on the specified map.
 NETWORK SAFE: No, for init.txt only
 
 
+(language_set <string>)
+
+change the language for localization
+NETWORK SAFE: Unknown, assumed unsafe
+
+
 (game_won)
 
 causes the player to successfully finish the current level and move to the next
@@ -100,6 +130,120 @@ NETWORK SAFE: Unknown, assumed unsafe
 
 goes back to the main menu
 NETWORK SAFE: Unknown, assumed unsafe
+
+
+(core_load)
+
+loads debug game state from core\core.bin
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(core_load_name <string>)
+
+loads debug game state from core\<path>
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(core_save)
+
+saves debug game state to core\core.bin
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(core_save_name <string>)
+
+saves debug game state to core\<path>
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(core_load_game)
+
+loads level and game state from core\core.bin
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(core_load_game_name <string>)
+
+loads level and game state from core\<path>
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_save_and_quit)
+
+save & quit to the main menu
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_save_unsafe)
+
+saves right now, even if the game is in an immediate-loss state (NEVER USE THIS! EVER!)
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_safe_to_save)
+
+returns FALSE if it would be a bad idea to save the player's game right now
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_safe_to_speak)
+
+returns FALSE if it would be a bad idea to play mission dialog right now
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_all_quiet)
+
+returns FALSE if there are bad guys around, projectiles in the air, etc.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_save)
+
+checks to see if it is safe to save game, then saves (gives up after 8 seconds)
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_save_cancel)
+
+cancels any pending game_save, timeout or not
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_save_no_timeout)
+
+checks to see if it is safe to save game, then saves (this version never gives up)
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_save_immediate)
+
+disregards player's current situation and saves (BE VERY CAREFUL!)
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_save_cinematic_skip)
+
+don't use this, except in one place.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_saving)
+
+checks to see if the game is trying to save the map.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(game_reverted)
+
+don't use this for anything, you black-hearted bastards.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(gui_reset)
+
+cleans out the halox ui screens and errors
+NETWORK SAFE: No
 
 
 (net_session_create <string> <string>)
@@ -138,6 +282,12 @@ NETWORK SAFE: Yes
 NETWORK SAFE: Yes
 
 
+(net_test_player_color <long>)
+
+network test: temporarily sets the color for all local players
+NETWORK SAFE: Yes
+
+
 (net_test_map_name <string>)
 
 network test: sets the name of the scenario to play
@@ -147,6 +297,12 @@ NETWORK SAFE: Yes
 (net_test_variant <string>)
 
 network test: sets the game variant to play
+NETWORK SAFE: Yes
+
+
+(net_test_reset_objects)
+
+network test: resets all objects on the map
 NETWORK SAFE: Yes
 
 
@@ -172,6 +328,12 @@ NETWORK SAFE: No, for mainmenu only
 
 network test: sets a parameter of the current game variant
 NETWORK SAFE: No, for mainmenu only
+
+
+(net_build_network_config)
+
+writes a new network configuration file
+NETWORK SAFE: Unknown, assumed unsafe
 
 
 (net_build_game_variant <string>)
@@ -212,13 +374,13 @@ NETWORK SAFE: Yes
 
 (net_verify_map_variant <string>)
 
-verifies the contents of a packed map variant file
+verifies the contents of a map variant file
 NETWORK SAFE: Unknown, assumed unsafe
 
 
 (net_load_and_use_map_variant <string>)
 
-loads the contents of a packed map variant file and submits to networking for use in the current game
+loads the contents of a map variant file and submits to networking for use in the current game
 NETWORK SAFE: Unknown, assumed unsafe
 
 
@@ -258,9 +420,57 @@ sets the name of the first user
 NETWORK SAFE: Yes
 
 
-(mp_game_won <long>)
+(mp_players_by_team <long>)
+
+<mp_team> given a team index, returns an object list containing all living player objects belonging to that team
+NETWORK SAFE: Yes
+
+
+(deterministic_end_game)
+
+end game deterministically, by inserting a simulation queue event
+NETWORK SAFE: Yes
+
+
+(mp_active_player_count_by_team <long>)
+
+<mp_team> given a team index, returns an object list containing all living player objects belonging to that team
+NETWORK SAFE: Yes
+
+
+(mp_game_won <short>)
 
 <mp_team> given a team index, declares the game a victory for that team and a loss for all others
+NETWORK SAFE: Yes
+
+
+(mp_respawn_override_timers <short>)
+
+<mp_team> causes all players on the specified team waiting to respawn (due to timer) to respawn immediately
+NETWORK SAFE: Yes
+
+
+(mp_ai_allegiance <short> <short>)
+
+<team> <mp_team> causes an allegiance to be formed between an AI squad team and a multiplayer team
+NETWORK SAFE: Yes
+
+
+(mp_allegiance <short> <short>)
+
+<mp_team> <mp_team> create an allegiance between two multiplayer teams
+NETWORK SAFE: Yes
+
+
+(mp_object_belongs_to_team <long> <short>)
+
+<object> <mp_team> causes specified object to belong to the given team, so that only that team can pick it up
+NETWORK SAFE: Yes
+
+
+(mp_weapon_belongs_to_team <long> <short>)
+
+<object> <mp_team> causes specified weapon to belong to the given team, so that only that team can pick it up
 NETWORK SAFE: Yes
 
 
@@ -300,9 +510,27 @@ drops all weapons near player
 NETWORK SAFE: Yes
 
 
+(cheat_all_chars)
+
+drops all characters near player
+NETWORK SAFE: Yes
+
+
 (cheat_teleport_to_camera)
 
 teleports player to camera location
+NETWORK SAFE: Yes
+
+
+(cheat_active_camouflage <bool>)
+
+gives the player active camouflage
+NETWORK SAFE: Yes
+
+
+(cheat_active_camouflage_by_player <long> <bool>)
+
+gives a specific player active camouflage
 NETWORK SAFE: Yes
 
 
@@ -329,6 +557,12 @@ drops the named tag e.g. objects\characters\brute\brute.biped using the specifie
 
 
 
+(ai_enable <boolean>)
+
+turns all AI on or off.
+NETWORK SAFE: Yes
+
+
 (director_debug_camera <boolean>)
 
 enable/disable camera debugging
@@ -341,9 +575,9 @@ toggles script control of the camera.
 NETWORK SAFE: Unknown, assumed unsafe
 
 
-(camera_set_mode <user_index> <mode_index>)
+(camera_set_mode <long> <long>)
 
-sets user's camera perspective
+<user_index> <camera_mode> sets user's camera perspective
 NETWORK SAFE: Unknown, assumed unsafe
 
 
@@ -395,15 +629,97 @@ NETWORK SAFE: Unknown, assumed unsafe
 NETWORK SAFE: Unknown, assumed unsafe
 
 
+(player_ragdoll)
+
+ragdolls the players biped.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(player_drop_weapon)
+
+drops the players held weapon.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(player_add_weapon <string> <long>)
+
+<weapon_definition_index> <weapon_addition_method> gives the player a weapon.
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(levels_add_fake_map_solo <string>)
+
+<scenario_path> adds a fake map for campaign
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(levels_add_map_solo <long> <string>)
+
+<map_id> <scenario_path> adds a map with the specified map id for campaign
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(levels_add_fake_map_multi <string>)
+
+<scenario_path> adds a fake map for multiplayer
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(levels_add_map_multi <long> <string>)
+
+<map_id> <scenario_path> adds a map with the specified map id for multiplayer
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(xoverlapped_debug_render <bool>)
+
+toggle display a list of active xoverlapped tasks
+NETWORK SAFE: Unknown, assumed unsafe
+
+
+(overlapped_display_task_descriptions)
+
+displays all tasks
+NETWORK SAFE: lol
+
+
+(overlapped_task_inject_error <string> <bool>)
+
+inject error for tasks
+NETWORK SAFE: lol
+
+
+(overlapped_task_pause <string> <bool>)
+
+pause tasks
+NETWORK SAFE: lol
+
+
 ; AVAILABLE EXTERNAL GLOBALS:
 
 (<boolean> debug_no_drawing)
 
+(<boolean> debug_force_all_player_views_to_default_player)
+
+(<boolean> debug_render_horizontal_splitscreen)
+
+(<boolean> debug_load_panic_to_main_menu)
+
+(<boolean> display_framerate)
+
+(<boolean> display_frame_deltas)
+
+(<boolean> console_status_string_render)
+
+(<boolean> console_pauses_game)
+
 (<boolean> terminal_render)
+
+(<boolean> console_dump_to_debug_display)
 
 (<real> director_camera_speed_scale)
 
-(<real> camera_fov)
+(<real> camera_global_fov)
 
 (<real> camera_yaw_scale)
 
@@ -419,10 +735,6 @@ NETWORK SAFE: Unknown, assumed unsafe
 
 (<real> flying_camera_movement_delay)
 
-(<boolean> display_framerate)
-
-(<boolean> display_frame_deltas)
-
 (<boolean> net_skip_countdown)
 
 (<boolean> net_experimental)
@@ -430,6 +742,8 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<boolean> net_show_latency_and_framerate_metrics_on_chud)
 
 (<boolean> net_fake_latency_and_framerate_metrics_on_chud)
+
+(<boolean> debug_enable_force_phonebooth_assassinate)
 
 (<boolean> cheat_deathless_player)
 
@@ -459,17 +773,21 @@ NETWORK SAFE: Unknown, assumed unsafe
 
 (<boolean> cheat_infinite_equipment_energy)
 
-(<boolean> console_dump_to_debug_display)
+(<long> render_debug_toggle_default_lightmaps_texaccum)
 
-(<boolean> console_pauses_game)
+(<boolean> render_debug_toggle_default_static_lighting)
+
+(<boolean> render_debug_toggle_default_dynamic_lighting)
+
+(<boolean> render_debug_toggle_default_sfx)
+
+(<long> render_debug_depth_render)
 
 (<real> render_debug_depth_render_scale_r)
 
 (<real> render_debug_depth_render_scale_g)
 
 (<real> render_debug_depth_render_scale_b)
-
-(<long> render_debug_depth_render)
 
 (<boolean> render_default_lighting)
 
@@ -486,6 +804,108 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<boolean> render_water_interaction)
 
 (<boolean> render_water_wireframe)
+
+(<boolean> debug_damage)
+
+(<boolean> debug_damage_verbose)
+
+(<boolean> collision_debug)
+
+(<boolean> collision_debug_water_proxy)
+
+(<boolean> collision_debug_spray)
+
+(<boolean> collision_debug_features)
+
+(<boolean> collision_debug_phantom_bsp)
+
+(<boolean> collision_debug_lightmaps)
+
+(<boolean> collision_debug_geometry_sampling)
+
+(<boolean> collision_debug_flags)
+
+(<boolean> collision_debug_flag_structure)
+
+(<boolean> collision_debug_flag_water)
+
+(<boolean> collision_debug_flag_instanced_geometry)
+
+(<boolean> collision_debug_flag_objects)
+
+(<boolean> collision_debug_flag_objects_bipeds)
+
+(<boolean> collision_debug_flag_objects_giants)
+
+(<boolean> collision_debug_flag_objects_effect_scenery)
+
+(<boolean> collision_debug_flag_objects_vehicles)
+
+(<boolean> collision_debug_flag_objects_weapons)
+
+(<boolean> collision_debug_flag_objects_equipment)
+
+(<boolean> collision_debug_flag_objects_terminals)
+
+(<boolean> collision_debug_flag_objects_projectiles)
+
+(<boolean> collision_debug_flag_objects_scenery)
+
+(<boolean> collision_debug_flag_objects_machines)
+
+(<boolean> collision_debug_flag_objects_controls)
+
+(<boolean> collision_debug_flag_objects_sound_scenery)
+
+(<boolean> collision_debug_flag_objects_crates)
+
+(<boolean> collision_debug_flag_objects_creatures)
+
+(<boolean> collision_debug_flag_ignore_child_objects)
+
+(<boolean> collision_debug_flag_ignore_nonpathfindable_objects)
+
+(<boolean> collision_debug_flag_ignore_cinematic_objects)
+
+(<boolean> collision_debug_flag_ignore_dead_bipeds)
+
+(<boolean> collision_debug_flag_ignore_passthrough_bipeds)
+
+(<boolean> collision_debug_flag_front_facing_surfaces)
+
+(<boolean> collision_debug_flag_back_facing_surfaces)
+
+(<boolean> collision_debug_flag_ignore_two_sided_surfaces)
+
+(<boolean> collision_debug_flag_ignore_invisible_surfaces)
+
+(<boolean> collision_debug_flag_ignore_breakable_surfaces)
+
+(<boolean> collision_debug_flag_allow_early_out)
+
+(<boolean> collision_debug_flag_try_to_keep_location_valid)
+
+(<boolean> collision_debug_repeat)
+
+(<real> collision_debug_point_x)
+
+(<real> collision_debug_point_y)
+
+(<real> collision_debug_point_z)
+
+(<real> collision_debug_vector_i)
+
+(<real> collision_debug_vector_j)
+
+(<real> collision_debug_vector_k)
+
+(<real> collision_debug_length)
+
+(<real> collision_debug_width)
+
+(<real> collision_debug_height)
+
+(<long> collision_debug_ignore_object_index)
 
 (<boolean> debug_structure_markers)
 
@@ -532,6 +952,58 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<boolean> debug_input_abstraction)
 
 (<boolean> debug_input_mouse_state)
+
+(<boolean> ai_render)
+
+(<boolean> ai_render_dialogue_player_weights)
+
+(<boolean> ai_render_behavior_stack_all)
+
+(<boolean> ai_render_character_names)
+
+(<boolean> ai_render_stimuli)
+
+(<boolean> ai_render_sectors)
+
+(<boolean> ai_render_object_properties)
+
+(<boolean> ai_render_intersection_links)
+
+(<boolean> ai_render_threshold_links)
+
+(<boolean> ai_render_suppress_combat)
+
+(<boolean> ai_render_vehicle_reservations)
+
+(<boolean> ai_render_objectives)
+
+(<boolean> ai_render_strength)
+
+(<boolean> ai_debug_tracking_data)
+
+(<boolean> ai_debug_perception_data)
+
+(<boolean> ai_debug_combat_status)
+
+(<boolean> ai_render_tracked_props_all)
+
+(<boolean> ai_render_targets_all)
+
+(<boolean> ai_render_command_scripts)
+
+(<boolean> ai_render_dialogue_variants)
+
+(<boolean> ai_render_dynamic_firing_positions)
+
+(<boolean> ai_render_vehicle_interest)
+
+(<boolean> ai_render_player_battle_vector)
+
+(<boolean> ai_render_player_needs_vehicle)
+
+(<real> water_physics_velocity_minimum)
+
+(<real> water_physics_velocity_maximum)
 
 (<boolean> debug_objects)
 
@@ -627,6 +1099,54 @@ NETWORK SAFE: Unknown, assumed unsafe
 
 (<boolean> debug_sound_manager_channels)
 
+(<real> havok_collision_tolerance)
+
+(<long> havok_debug_mode)
+
+(<long> havok_thread_count)
+
+(<long> havok_environment_type)
+
+(<real> havok_shape_radius)
+
+(<boolean> havok_jumping_beans)
+
+(<boolean> havok_disable_deactivation)
+
+(<real> havok_deactivation_reference_distance)
+
+(<boolean> havok_weld_environment)
+
+(<boolean> havok_batch_add_entities_disabled)
+
+(<boolean> havok_shape_cache)
+
+(<boolean> havok_shape_cache_debug)
+
+(<boolean> havok_enable_back_stepping)
+
+(<boolean> havok_enable_sweep_shapes)
+
+(<boolean> havok_display_stats)
+
+(<boolean> havok_initialize_profiling)
+
+(<boolean> impacts_debug)
+
+(<boolean> proxies_debug)
+
+(<boolean> collision_damage_debug)
+
+(<boolean> havok_play_impact_effects)
+
+(<boolean> havok_play_biped_impact_effects)
+
+(<boolean> physics_debug)
+
+(<boolean> havok_cleanup_inactive_agents)
+
+(<boolean> havok_memory_always_system)
+
 (<boolean> contrail_render_enable)
 
 (<boolean> soft_ceilings_disable)
@@ -645,13 +1165,27 @@ NETWORK SAFE: Unknown, assumed unsafe
 
 (<real> game_speed)
 
+(<boolean> chud_enabled)
+
+(<boolean> chud_debug_grid)
+
+(<boolean> chud_debug_messages)
+
+(<boolean> chud_debug_crosshair)
+
+(<boolean> chud_debug_metagame)
+
 (<boolean> game_time_lock)
 
 (<boolean> game_time_statistics)
 
+(<boolean> debug_game_save)
+
 (<boolean> static_fp_fov)
 
 (<boolean> centered_crosshair)
+
+(<boolean> enable_better_cpu_gpu_sync)
 
 (<boolean> reduce_widescreen_fov_during_cinematics)
 
@@ -659,7 +1193,29 @@ NETWORK SAFE: Unknown, assumed unsafe
 
 (<boolean> render_debug_force_4x3_aspect_ratio)
 
+(<short> render_debug_transparent_sort_method)
+
 (<boolean> render_pc_specular)
 
 (<boolean> render_pc_albedo_lighting)
+
+(<boolean> mean_look_sensitivity)
+
+(<long> watermark_enabled)
+
+(<boolean> debug_skulls)
+
+(<boolean> debug_weapons)
+
+(<boolean> debug_weapons_triggers)
+
+(<boolean> debug_weapons_barrels)
+
+(<boolean> debug_weapons_magazines)
+
+(<boolean> debug_weapons_primary)
+
+(<boolean> debug_weapons_secondary)
+
+(<boolean> debug_animation_fp_sprint_disable)
 
