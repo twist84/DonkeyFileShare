@@ -137,7 +137,7 @@
 				<item type = command name = "water" variable = "drop levels\\reference\\material_samples\\sample_objects\\water\\water.scenery">
 				<item type = command name = "wood" variable = "drop levels\\reference\\material_samples\\sample_objects\\wood\\wood.scenery">
 				<item type = command name = "material texture" variable = "drop levels\\reference\\material_samples\\sample_objects\\material_texture\\material_texture.scenery">
-		</Menu>
+		</menu>
 		<menu name = "Giants">
 			<item type = command name = "Scarab" variable = "drop objects\\giants\\scarab\\scarab.giant">
 		</menu>
@@ -483,19 +483,19 @@
 		<item type = command name = "Random Influence Enable" variable= "debug_spawning_random_influence 1">
 		<item type = command name = "Natural Weight Enable" variable= "debug_spawning_natural_weight 1">
 		<item type = command name = "Nominal Weight Enable" variable= "debug_spawning_nominal_weight 1">
-			<menu name = "Spawning Disable">
-				<item type = command name = "Influencers Disable" variable = "debug_spawning_influencers 0">
-				<item type = command name = "Weapon Influences Disable" variable= "debug_spawning_weapon_influences 0">
-				<item type = command name = "Proximity Enemy Bias Disable" variable= "debug_spawning_proximity_enemy 0">
-				<item type = command name = "Proximity Enemy Forbid Disable" variable= "debug_spawning_proximity_forbid 0">
-				<item type = command name = "Respawn Zones Disable" variable = "debug_spawning_respawn_zones 0">
-				<item type = command name = "Moving Vehicle Disable" variable= "debug_spawning_moving_vehicle 0">
-				<item type = command name = "Dangerous Projectile Disable" variable= "debug_spawning_dangerous_projectiles 0">
-				<item type = command name = "Ally Bias Disable" variable= "debug_spawning_teammates 0">
-				<item type = command name = "Random Influence Disable" variable= "debug_spawning_random_influence 0">
-				<item type = command name = "Natural Weight Disable" variable= "debug_spawning_natural_weight 0">
-				<item type = command name = "Nominal Weight Disable" variable= "debug_spawning_nominal_weight 0">
-			</menu>
+		<menu name = "Spawning Disable">
+			<item type = command name = "Influencers Disable" variable = "debug_spawning_influencers 0">
+			<item type = command name = "Weapon Influences Disable" variable= "debug_spawning_weapon_influences 0">
+			<item type = command name = "Proximity Enemy Bias Disable" variable= "debug_spawning_proximity_enemy 0">
+			<item type = command name = "Proximity Enemy Forbid Disable" variable= "debug_spawning_proximity_forbid 0">
+			<item type = command name = "Respawn Zones Disable" variable = "debug_spawning_respawn_zones 0">
+			<item type = command name = "Moving Vehicle Disable" variable= "debug_spawning_moving_vehicle 0">
+			<item type = command name = "Dangerous Projectile Disable" variable= "debug_spawning_dangerous_projectiles 0">
+			<item type = command name = "Ally Bias Disable" variable= "debug_spawning_teammates 0">
+			<item type = command name = "Random Influence Disable" variable= "debug_spawning_random_influence 0">
+			<item type = command name = "Natural Weight Disable" variable= "debug_spawning_natural_weight 0">
+			<item type = command name = "Nominal Weight Disable" variable= "debug_spawning_nominal_weight 0">
+		</menu>
 	</menu>
 	<menu name = "Settings">
 		<item type = command name = "Splitscreen 1" variable = "game_splitscreen 1">
