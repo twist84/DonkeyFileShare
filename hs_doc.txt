@@ -26,31 +26,31 @@ NETWORK SAFE: Yes
 returns true if any specified expressions are true.
 NETWORK SAFE: Yes
 
-(<real32> + <number(s)>)
+(<real> + <number(s)>)
 returns the sum of all specified expressions.
 NETWORK SAFE: Yes
 
-(<real32> - <number> <number>)
+(<real> - <number> <number>)
 returns the difference of two expressions.
 NETWORK SAFE: Yes
 
-(<real32> * <number(s)>)
+(<real> * <number(s)>)
 returns the product of all specified expressions.
 NETWORK SAFE: Yes
 
-(<real32> / <number> <number>)
+(<real> / <number> <number>)
 returns the quotient of two expressions.
 NETWORK SAFE: Yes
 
-(<real32> % <number> <number>)
+(<real> % <number> <number>)
 returns the remainder of two expressions
 NETWORK SAFE: Yes
 
-(<real32> min <number(s))
+(<real> min <number(s))
 returns the minimum of all specified expressions.
 NETWORK SAFE: Yes
 
-(<real32> max <number(s)>)
+(<real> max <number(s)>)
 returns the maximum of all specified expressions.
 NETWORK SAFE: Yes
 
@@ -109,7 +109,7 @@ Evaluate the given script
 returns the opposite of the expression.
 NETWORK SAFE: Yes
 
-(<real32> pin <real32> <real32> <real32>)
+(<real> pin <real> <real> <real>)
 returns the first value pinned between the second two
 NETWORK SAFE: Yes
 
@@ -153,11 +153,11 @@ NETWORK SAFE: Yes
 Terminates all currently running threads.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> get_executing_running_thread)
+(<long> get_executing_running_thread)
 Retrieves the current executing thread index
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> kill_thread <int32>)
+(<void> kill_thread <long>)
 Kill the specified thread
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -173,7 +173,7 @@ NETWORK SAFE: Yes
 returns a list of the players (DO NOT USE TO COUNT PLAYERS IN COOP GAME, USE game_coop_player_count)
 NETWORK SAFE: Yes
 
-(<unit> player_get <int32>)
+(<unit> player_get <long>)
 Get a player by absolute index
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -213,7 +213,7 @@ NETWORK SAFE: Yes
 returns list of objects in volume or (max 128)
 NETWORK SAFE: Yes
 
-(<object_list> volume_return_objects_by_type <trigger_volume> <int32>)
+(<object_list> volume_return_objects_by_type <trigger_volume> <long>)
 returns list of objects in volume or (max 128).
 NETWORK SAFE: Yes
 
@@ -221,15 +221,15 @@ NETWORK SAFE: Yes
 enables/disables the trigger volume(s) with the given name that cause zone set switches
 NETWORK SAFE: Yes
 
-(<object> list_get <object_list> <int16>)
+(<object> list_get <object_list> <short>)
 returns an item in an object list.
 NETWORK SAFE: Yes
 
-(<int16> list_count <object_list>)
+(<short> list_count <object_list>)
 returns the number of objects in a list
 NETWORK SAFE: Yes
 
-(<int16> list_count_not_dead <object_list>)
+(<short> list_count_not_dead <object_list>)
 returns the number of objects in a list that aren't dead
 NETWORK SAFE: Yes
 
@@ -265,11 +265,11 @@ NETWORK SAFE: Yes
 causes the specified damage at the specified object list.
 NETWORK SAFE: Yes
 
-(<void> damage_object <object> <string_id> <real32>)
+(<void> damage_object <object> <string_id> <real>)
 causes the specified damage at the specified object.
 NETWORK SAFE: Yes
 
-(<void> damage_objects <object_list> <string_id> <real32>)
+(<void> damage_objects <object_list> <string_id> <real>)
 causes the specified damage at the specified object list.
 NETWORK SAFE: Yes
 
@@ -329,7 +329,7 @@ NETWORK SAFE: Yes
 destroys all non player objects.
 NETWORK SAFE: Yes
 
-(<void> object_destroy_type_mask <int32>)
+(<void> object_destroy_type_mask <long>)
 destroys all objects matching the type mask
 NETWORK SAFE: Yes
 
@@ -349,15 +349,15 @@ NETWORK SAFE: No
 set/reset shadow castingness of object
 NETWORK SAFE: No
 
-(<real32> object_buckling_magnitude_get <object>)
+(<real> object_buckling_magnitude_get <object>)
 returns the amoount [0-1] that a scarab is buckling
 NETWORK SAFE: Yes
 
-(<void> object_function_set <int32> <real32>)
+(<void> object_function_set <long> <real>)
 sets a global object function (0-3) to value
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> object_set_function_variable <object> <string_id> <real32> <real32>)
+(<void> object_set_function_variable <object> <string_id> <real> <real>)
 sets funciton variable for sin-o-matic use
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -393,15 +393,15 @@ NETWORK SAFE: Yes (actors only)
 debugs object memory usage
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> object_get_health <object>)
+(<real> object_get_health <object>)
 returns the health [0,1] of the object, returns -1 if the object does not exist
 NETWORK SAFE: Yes
 
-(<real32> object_get_shield <object>)
+(<real> object_get_shield <object>)
 returns the shield [0,1] of the object, returns -1 if the object does not exist
 NETWORK SAFE: Yes
 
-(<void> object_set_shield_effect <object> <real32> <real32>)
+(<void> object_set_shield_effect <object> <real> <real>)
 sets the shield response effect (not current shield amount) to a given value over the given number of seconds (cinematic use only, remember to call (object_set_shield_effect 0 0) after use!)
 NETWORK SAFE: No
 
@@ -425,23 +425,23 @@ NETWORK SAFE: Yes
 detaches from the given parent object the given child object
 NETWORK SAFE: No
 
-(<void> object_set_scale <object> <real32> <int16>)
+(<void> object_set_scale <object> <real> <short>)
 sets the scale for a given object and interpolates over the given number of frames to achieve that scale
 NETWORK SAFE: No
 
-(<void> object_set_velocity <object> <real32>)
+(<void> object_set_velocity <object> <real>)
 Sets the (object-relative) forward velocity of the given object
 NETWORK SAFE: Yes
 
-(<void> object_set_inertia_tensor_scale <object> <real32>)
+(<void> object_set_inertia_tensor_scale <object> <real>)
 0==default of 1.0, otherwise it is scale on this objects inertia tensor
 NETWORK SAFE: Yes
 
-(<void> object_set_collision_damage_armor_scale <object> <real32>)
+(<void> object_set_collision_damage_armor_scale <object> <real>)
 0==default of 1.0, otherwise it is scale on how this objects takes collisoin damage, >1 == more protection, <1 == less
 NETWORK SAFE: Yes
 
-(<void> object_set_velocity <object> <real32> <real32> <real32>)
+(<void> object_set_velocity <object> <real> <real> <real>)
 Sets the (object-relative) velocity of the given object
 NETWORK SAFE: Yes
 
@@ -453,11 +453,11 @@ NETWORK SAFE: Yes
 returns TRUE if the specified model target is destroyed
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> object_model_targets_destroyed <object> <string_id>)
+(<short> object_model_targets_destroyed <object> <string_id>)
 returns TRUE if the specified model target is destroyed
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> object_damage_damage_section <object> <string_id> <real32>)
+(<void> object_damage_damage_section <object> <string_id> <real>)
 applies damage to a damage section, causing all manner of effects/constraint breakage to occur
 NETWORK SAFE: Yes
 
@@ -537,15 +537,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 turns the specified object in the direction of the specified flag.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> object_set_shield <object> <real32>)
+(<void> object_set_shield <object> <real>)
 sets the shield vitality of the specified object (between 0 and 1).  This does the wrong thing.  Don't use it.
 NETWORK SAFE: No
 
-(<void> object_set_shield_normalized <object> <real32>)
+(<void> object_set_shield_normalized <object> <real>)
 sets the shield vitality of the specified object (between 0 and 1).
 NETWORK SAFE: No
 
-(<void> object_set_shield_stun <object> <real32>)
+(<void> object_set_shield_stun <object> <real>)
 set how long the shield will be stunned for, 0 is unstunned
 NETWORK SAFE: No
 
@@ -565,26 +565,26 @@ NETWORK SAFE: No
 sets the desired region (use "" for all regions) to the model state with the given name, e.g. (object_set_region_state marine head destroyed)
 NETWORK SAFE: No
 
-(<boolean> objects_can_see_object <object_list> <object> <real32>)
+(<boolean> objects_can_see_object <object_list> <object> <real>)
 returns true if any of the specified units are looking within the specified number of degrees of the object.
 NETWORK SAFE: Yes
 
-(<boolean> objects_can_see_flag <object_list> <cutscene_flag> <real32>)
+(<boolean> objects_can_see_flag <object_list> <cutscene_flag> <real>)
 returns true if any of the specified units are looking within the
 NETWORK SAFE: Yes
 
-(<real32> objects_distance_to_object <object_list> <object>)
+(<real> objects_distance_to_object <object_list> <object>)
 returns minimum distance from any of the specified objects to the specified destination object. (returns -1 if there are no objects to check)
 NETWORK SAFE: Yes
 
-(<real32> objects_distance_to_flag <object_list> <cutscene_flag>)
+(<real> objects_distance_to_flag <object_list> <cutscene_flag>)
 returns minimum distance from any of the specified objects to the specified flag. (returns -1 if there are no objects, or no flag, to check)
 NETWORK SAFE: Yes
 
 (<void> map_info)
 prints the map, zone set, active bsps, and current bsp
 
-(<void> position_predict <real32> <real32> <real32>)
+(<void> position_predict <real> <real> <real>)
 in: x, y, z position. loads textures/geometry/sounds necessary to present locations that are about to come on-screen.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -612,11 +612,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns a list of the special game engine objects
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> random_range <int16> <int16>)
+(<short> random_range <short> <short>)
 returns a random value in the range [lower bound, upper bound)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> real_random_range <real32> <real32>)
+(<real> real_random_range <real> <real>)
 returns a random value in the range [lower bound, upper bound)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -624,15 +624,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 resets all physics constants to earthly values
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> physics_set_gravity <real32>)
+(<void> physics_set_gravity <real>)
 set global gravity acceleration relative to halo standard gravity
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> physics_set_velocity_frame <real32> <real32> <real32>)
+(<void> physics_set_velocity_frame <real> <real> <real>)
 sets a local frame of motion for updating physics of things that wish to respect it
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> physics_disable_character_ground_adhesion_forces <real32>)
+(<void> physics_disable_character_ground_adhesion_forces <real>)
 turn off ground adhesion forces so you can play tricks with gravity
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -656,7 +656,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 stop profiling havok, and save the results
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> havok_profile_range <int32> <int32>)
+(<void> havok_profile_range <long> <long>)
 captures timers and a movie of a specific tick range
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -688,7 +688,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 kill the specified unit's cutscene recording.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> recording_time <unit>)
+(<short> recording_time <unit>)
 return the time remaining in the specified unit's cutscene recording.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -700,18 +700,18 @@ NETWORK SAFE: Unknown, assumed unsafe
 outputs text light state
 NETWORK SAFE: yes
 
-(<void> render_lights_enable_cinematic_shadow <boolean> <object> <string_id> <real32>)
+(<void> render_lights_enable_cinematic_shadow <boolean> <object> <string_id> <real>)
 enable/disable the specified unit to receive cinematic shadows where the shadow is focused about a radius around a marker name
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> texture_camera_set_object_marker <object> <string_id> <real32>)
+(<void> texture_camera_set_object_marker <object> <string_id> <real>)
 sets the render texture camera to a given object marker
 
-(<void> texture_camera_set_position <real32> <real32> <real32>)
+(<void> texture_camera_set_position <real> <real> <real>)
 sets the render texture camera position
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> texture_camera_set_target <real32> <real32> <real32>)
+(<void> texture_camera_set_target <real> <real> <real>)
 sets the render texture camera target
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -723,7 +723,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 targets the render texture camera to view a given object marker
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> texture_camera_position_world_offset <real32> <real32> <real32>)
+(<void> texture_camera_position_world_offset <real> <real> <real>)
 adds a worldspace offset to the current texture camera position
 
 (<void> texture_camera_on)
@@ -734,75 +734,75 @@ NETWORK SAFE: Unknown, assumed unsafe
 turns off the render texture camera
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> texture_camera_set_aspect_ratio <real32>)
+(<void> texture_camera_set_aspect_ratio <real>)
 sets the texture camera aspet ratio
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> texture_camera_set_resolution <int32> <int32>)
+(<void> texture_camera_set_resolution <long> <long>)
 sets the texture camera render resolution
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> texture_camera_render_mode <int32>)
+(<void> texture_camera_render_mode <long>)
 switches the texture camera render mode
 
 (<void> texture_camera_unknownBC <object>)
 
 
-(<void> texture_camera_set_fov <real32>)
+(<void> texture_camera_set_fov <real>)
 sets the field of view on the texture camera, in degrees
 
-(<void> texture_camera_set_fov_frame_target <real32>)
+(<void> texture_camera_set_fov_frame_target <real>)
 zooms the field of view to frame the target, with target zoom factor to zoom closer
 
 (<void> texture_camera_enable_dynamic_lights <boolean>)
 toggle rendering of dynamic lights in the texture camera
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_on <int32>)
+(<void> hud_camera_on <long>)
 turns on the hud camera
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_off <int32>)
+(<void> hud_camera_off <long>)
 turns off the hud camera
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_set_position <int32> <real32> <real32> <real32>)
+(<void> hud_camera_set_position <long> <real> <real> <real>)
 sets the render texture camera position
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_set_target <int32> <real32> <real32> <real32>)
+(<void> hud_camera_set_target <long> <real> <real> <real>)
 sets the render texture camera target
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_attach_to_object <int32> <object> <string_id>)
+(<void> hud_camera_attach_to_object <long> <object> <string_id>)
 attaches the render texture camera to a given object marker
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_target_object <int32> <object> <string_id>)
+(<void> hud_camera_target_object <long> <object> <string_id>)
 targets the render texture camera to view a given object marker
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_structure <int32> <boolean>)
+(<void> hud_camera_structure <long> <boolean>)
 toggle rendering of structure in the hud camera
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_highlight_object <int32> <object> <real32> <real32> <real32> <real32>)
+(<void> hud_camera_highlight_object <long> <object> <real> <real> <real> <real>)
 highlights an object in the given color
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_clear_objects <int32>)
+(<void> hud_camera_clear_objects <long>)
 clears all objects
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_spin_around <int32> <object>)
+(<void> hud_camera_spin_around <long> <object>)
 makes the hud camera spin around the given object
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_from_player_view <int32>)
+(<void> hud_camera_from_player_view <long>)
 aligns the hud camera to the player camera
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_camera_window <int32> <real32> <real32> <real32> <real32>)
+(<void> hud_camera_window <long> <real> <real> <real> <real>)
 sets the render window of the hud camera (0...1)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -810,27 +810,27 @@ NETWORK SAFE: Unknown, assumed unsafe
 toggles displaying the texture camera in the corner of the screen
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> debug_structure_cluster <int32> <int32>)
+(<void> debug_structure_cluster <long> <long>)
 specify a structure and cluster to debug
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_debug_structure_cluster_fog <int32>)
+(<void> render_debug_structure_cluster_fog <long>)
 enables cluster fog debugging
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_debug_structure_fog_plane <int32>)
+(<void> render_debug_structure_fog_plane <long>)
 enables fog plane debugging
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_debug_structure_fog_plane_infinite_extent <int32>)
+(<void> render_debug_structure_fog_plane_infinite_extent <long>)
 enables fog plane debugging
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_debug_structure_fog_zone <int32>)
+(<void> render_debug_structure_fog_zone <long>)
 enabled fog zone debugging
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_debug_structure_fog_zone_floodfill <int32>)
+(<void> render_debug_structure_fog_zone_floodfill <long>)
 enables fog zone debugging
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -842,15 +842,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 enables cluster error debugging (all)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_debug_structure_line_opacity <real32> <real32> <real32> <real32>)
+(<void> render_debug_structure_line_opacity <real> <real> <real> <real>)
 sets the opacity (0 is default)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_debug_structure_text_opacity <real32> <real32> <real32> <real32>)
+(<void> render_debug_structure_text_opacity <real> <real> <real> <real>)
 sets the opacity (0 is default)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_debug_structure_opacity <real32> <real32> <real32> <real32>)
+(<void> render_debug_structure_opacity <real> <real> <real> <real>)
 sets the opacity (0 is default)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -878,7 +878,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 substring of object definition name to spew out it's debug usage
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_debug_query_bsp_resources <int32> <boolean>)
+(<void> render_debug_query_bsp_resources <long> <boolean>)
 BSP index and whether to spit out all bitmaps used
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -914,11 +914,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 starts a custom looping animation playing on a piece of scenery relative to a parent object
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> scenery_animation_start_at_frame <scenery> <animation_graph> <string_id> <int16>)
+(<void> scenery_animation_start_at_frame <scenery> <animation_graph> <string_id> <short>)
 starts a custom animation playing on a piece of scenery at a specific frame
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> scenery_animation_start_relative_at_frame <scenery> <animation_graph> <string_id> <object> <int16>)
+(<void> scenery_animation_start_relative_at_frame <scenery> <animation_graph> <string_id> <object> <short>)
 starts a custom animation playing on a piece of scenery relative to a specific cutscene flag at a specific frame
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -926,7 +926,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 starts the idle animation (if any) for a piece of scenery
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> scenery_get_animation_time <scenery>)
+(<short> scenery_get_animation_time <scenery>)
 returns the number of ticks remaining in a custom animation (or zero, if the animation is over).
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -934,7 +934,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 allows a unit to blink or not (units never blink when they are dead)
 NETWORK SAFE: No
 
-(<void> unit_set_active_camo <unit> <boolean> <real32>)
+(<void> unit_set_active_camo <unit> <boolean> <real>)
 enable or disable active camo for the given unit over the specified number of seconds
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -958,7 +958,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns whether or not the given unit is current emitting an ai
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> unit_get_custom_animation_time <unit>)
+(<short> unit_get_custom_animation_time <unit>)
 returns the number of ticks remaining in a unit's custom animation (or zero, if the animation is over).
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -986,11 +986,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 starts a custom animation playing on a unit list (interpolates into animation if last parameter is TRUE)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<boolean> unit_custom_animation_at_frame <unit> <animation_graph> <string_id> <boolean> <int16>)
+(<boolean> unit_custom_animation_at_frame <unit> <animation_graph> <string_id> <boolean> <short>)
 starts a custom animation playing on a unit at a specific frame index(interpolates into animation if next to last parameter is TRUE)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<boolean> unit_custom_animation_relative_at_frame <unit> <animation_graph> <string_id> <string_id> <boolean> <int16>)
+(<boolean> unit_custom_animation_relative_at_frame <unit> <animation_graph> <string_id> <string_id> <boolean> <short>)
 starts a custom animation playing on a unit relative to a specific cutscene flag at a specific frame index(interpolates into animation if next to last parameter is TRUE)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1018,7 +1018,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 sets unit's actively controlled flag
 NETWORK SAFE: No
 
-(<int16> unit_get_team_index <unit>)
+(<short> unit_get_team_index <unit>)
 returns the team index of the unit, returns -1 if the unit does not have a team
 NETWORK SAFE: Yes
 
@@ -1048,14 +1048,14 @@ NETWORK SAFE: Yes (w/o animation on clients)
 (<void> unit_falling_damage_disable <unit> <boolean>)
 disables falling damage on unit
 
-(<boolean> unit_in_vehicle_type <unit> <int32>)
+(<boolean> unit_in_vehicle_type <unit> <long>)
 returns true if the unit is in a vehicle that matches the specified vehicle type
 
-(<int16> object_get_turret_count <object>)
+(<short> object_get_turret_count <object>)
 returns the number of turrets attached to the given object
 NETWORK SAFE: Unknown, assumed UNSAFE
 
-(<vehicle> object_get_turret <object> <int16>)
+(<vehicle> object_get_turret <object> <short>)
 returns the nth turret attached to the given object
 NETWORK SAFE: Unknown, assumed UNSAFE
 
@@ -1063,11 +1063,11 @@ NETWORK SAFE: Unknown, assumed UNSAFE
 Causes the given unit to attempt to board the named seat
 NETWORK SAFE: Yes
 
-(<void> unit_set_emotion <unit> <int32> <real32> <real32>)
+(<void> unit_set_emotion <unit> <long> <real> <real>)
 sets a unit's facial expression (-1 is none, other values depend on unit)
 NETWORK SAFE: No
 
-(<void> unit_set_emotion_by_name <unit> <string_id> <real32> <real32>)
+(<void> unit_set_emotion_by_name <unit> <string_id> <real> <real>)
 sets a unit's facial expression by name with weight and transition time
 NETWORK SAFE: No
 
@@ -1079,7 +1079,7 @@ NETWORK SAFE: No
 sets a unit's flashlight on or off
 NETWORK SAFE: No
 
-(<void> unit_set_voice <unit> <any_tag>)
+(<void> unit_set_voice <unit> <any tag>)
 set the dialogue for the given unit
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1111,31 +1111,31 @@ NETWORK SAFE: Unknown, assumed unsafe
 makes a unit exit its vehicle (0 = normal exit to airborne, 1 = ejection, 2 = ejection + death, 3 = exit to ground)
 NETWORK SAFE: Yes (w/o client animation)
 
-(<void> unit_exit_vehicle <unit> <int16>)
+(<void> unit_exit_vehicle <unit> <short>)
 makes a unit exit its vehicle (0 = normal exit to airborne, 1 = ejection, 2 = ejection + death, 3 = exit to ground)
 NETWORK SAFE: Yes (w/o client animation)
 
-(<void> unit_set_maximum_vitality <unit> <real32> <real32>)
+(<void> unit_set_maximum_vitality <unit> <real> <real>)
 sets a unit's maximum body and shield vitality
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> units_set_maximum_vitality <object_list> <real32> <real32>)
+(<void> units_set_maximum_vitality <object_list> <real> <real>)
 sets a group of units' maximum body and shield vitality
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> unit_set_current_vitality <unit> <real32> <real32>)
+(<void> unit_set_current_vitality <unit> <real> <real>)
 sets a unit's current body and shield vitality
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> units_set_current_vitality <object_list> <real32> <real32>)
+(<void> units_set_current_vitality <object_list> <real> <real>)
 sets a group of units' current body and shield vitality
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> vehicle_load_magic <object> <unit_seat_mapping> <object_list>)
+(<short> vehicle_load_magic <object> <unit_seat_mapping> <object_list>)
 makes a list of units (named or by encounter) magically get into a vehicle, in the substring-specified seats (e.g. CD-passenger... empty string matches all seats)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> vehicle_unload <object> <unit_seat_mapping>)
+(<short> vehicle_unload <object> <unit_seat_mapping>)
 makes units get out of an object from the substring-specified seats (e.g. CD-passenger... empty string matches all seats)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1159,15 +1159,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns the gunner of a vehicle
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> unit_get_health <unit>)
+(<real> unit_get_health <unit>)
 returns the health [0,1] of the unit, returns -1 if the unit does not exist
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> unit_get_shield <unit>)
+(<real> unit_get_shield <unit>)
 returns the shield [0,1] of the unit, returns -1 if the unit does not exist
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> unit_get_total_grenade_count <unit>)
+(<short> unit_get_total_grenade_count <unit>)
 returns the total number of grenades for the given unit, 0 if it does not exist
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1187,11 +1187,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns TRUE if the <unit> has equipment <object> , FALSE otherwise
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> unit_lower_weapon <unit> <int16>)
+(<void> unit_lower_weapon <unit> <short>)
 lower the units weapon over x ticks
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> unit_raise_weapon <unit> <int16>)
+(<void> unit_raise_weapon <unit> <short>)
 raises the units weapon over x ticks
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1231,7 +1231,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 adds/resets the unit's health, shield, and inventory (weapons and grenades) to the named profile. resets if third parameter is true, adds if false. weapons will be marked as garbage if fourth parameter is true (for respawning equipment).
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> weapon_hold_trigger <weapon> <int32> <boolean>)
+(<void> weapon_hold_trigger <weapon> <long> <boolean>)
 turns the trigger for a weapon  on/off
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1243,35 +1243,35 @@ NETWORK SAFE: Unknown, assumed unsafe
 changes a machine's never_appears_locked flag, but only if paul is a bastard
 NETWORK SAFE: No
 
-(<void> device_set_power <device> <real32>)
+(<void> device_set_power <device> <real>)
 immediately sets the power of a named device to the given value
 NETWORK SAFE: Yes
 
-(<real32> device_get_power <device>)
+(<real> device_get_power <device>)
 gets the current power of a named device
 NETWORK SAFE: Yes
 
-(<boolean> device_set_position <device> <real32>)
+(<boolean> device_set_position <device> <real>)
 set the desired position of the given device (used for devices without explicit device groups)
 NETWORK SAFE: Yes
 
-(<real32> device_get_position <device>)
+(<real> device_get_position <device>)
 gets the current position of the given device (used for devices without explicit device groups)
 NETWORK SAFE: Yes
 
-(<void> device_set_position_immediate <device> <real32>)
+(<void> device_set_position_immediate <device> <real>)
 instantaneously changes the position of the given device (used for devices without explicit device groups
 NETWORK SAFE: No (only desired works, need to add immediate support)
 
-(<real32> device_group_get <device_group>)
+(<real> device_group_get <device_group>)
 returns the desired value of the specified device group.
 NETWORK SAFE: Yes
 
-(<boolean> device_group_set <device> <device_group> <real32>)
+(<boolean> device_group_set <device> <device_group> <real>)
 changes the desired value of the specified device group.
 NETWORK SAFE: Yes
 
-(<void> device_group_set_immediate <device_group> <real32>)
+(<void> device_group_set_immediate <device_group> <real>)
 instantaneously changes the value of the specified device group.
 NETWORK SAFE: No (only desired works, need to add immediate support)
 
@@ -1295,7 +1295,7 @@ NETWORK SAFE: No
 TRUE allows a device to change states only once
 NETWORK SAFE: No
 
-(<boolean> device_set_position_track <device> <string_id> <real32>)
+(<boolean> device_set_position_track <device> <string_id> <real>)
 set the desired position track animation to use (optional interpolation time onto track)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1303,11 +1303,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 set the desired overlay animation to use
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> device_animate_position <device> <real32> <real32> <real32> <real32> <boolean>)
+(<void> device_animate_position <device> <real> <real> <real> <real> <boolean>)
 animate the position over time
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> device_animate_overlay <device> <real32> <real32> <real32> <real32>)
+(<void> device_animate_overlay <device> <real> <real> <real> <real>)
 animate the overlay over time
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1331,7 +1331,7 @@ NETWORK SAFE: Yes
 gives the player active camouflage
 NETWORK SAFE: Yes
 
-(<void> cheat_active_camouflage_by_player <int16> <boolean>)
+(<void> cheat_active_camouflage_by_player <short> <boolean>)
 gives a specific player active camouflage
 NETWORK SAFE: Yes
 
@@ -1339,7 +1339,7 @@ NETWORK SAFE: Yes
 reloads the cheats.txt file
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> drop_safe <any_tag>)
+(<void> drop_safe <any tag>)
 drops the named tag e.g. objects\vehicles\banshee\banshee.vehicle
 NETWORK SAFE: Yes, for objects
 
@@ -1371,7 +1371,7 @@ NETWORK SAFE: No
 turn player combat dialogue on/off
 NETWORK SAFE: No
 
-(<void> ai_infection_suppress <int32>)
+(<void> ai_infection_suppress <long>)
 disable infection for this number of ticks
 NETWORK SAFE: Yes
 
@@ -1399,11 +1399,11 @@ NETWORK SAFE: Yes
 returns the squad of the given actor. Invalid if the given ai is NOT an actor-type (i.e. is itself a squad or squad group or task
 NETWORK SAFE: Yes
 
-(<ai> ai_get_turret_ai <ai> <int16>)
+(<ai> ai_get_turret_ai <ai> <short>)
 returns an the ai controlling the Nth turret attached to the given ai (or its vehicle)
 NETWORK SAFE: Yes
 
-(<point_reference> ai_random_smart_point <point_reference> <real32> <real32> <real32>)
+(<point_reference> ai_random_smart_point <point_reference> <real> <real> <real>)
 returns a point in the given point set that a player is probably going to be able to see. Args are [point set], [min distance], [max distance], [angle-from-forward], all relative to the player
 NETWORK SAFE: Yes
 
@@ -1411,11 +1411,11 @@ NETWORK SAFE: Yes
 returns the nearest point in the given point set to the given object
 NETWORK SAFE: Yes
 
-(<int32> ai_get_point_count <point_reference>)
+(<long> ai_get_point_count <point_reference>)
 returns the number of points in the given point set
 NETWORK SAFE: Yes
 
-(<point_reference> ai_point_set_get_point <point_reference> <int16>)
+(<point_reference> ai_point_set_get_point <point_reference> <short>)
 returns Nth point in the point set
 NETWORK SAFE: Yes
 
@@ -1423,7 +1423,7 @@ NETWORK SAFE: Yes
 places the given number of members of the specified squad.
 NETWORK SAFE: Yes
 
-(<void> ai_place <ai> <int16>)
+(<void> ai_place <ai> <short>)
 places the given number of members of the specified squad.
 NETWORK SAFE: Yes
 
@@ -1555,11 +1555,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 the given ai (actor, squad, task, etc.) will prefer the given other ai (actor, squad, task, etc.)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> ai_set_targeting_group <ai> <int16>)
+(<void> ai_set_targeting_group <ai> <short>)
 Set the AI to only target other guys of targetin group X (true/false whether the player should also be targeted)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> ai_set_targeting_group <ai> <int16> <boolean>)
+(<void> ai_set_targeting_group <ai> <short> <boolean>)
 Set the AI to only target other guys of targetin group X (true/false whether the player should also be targeted)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1575,15 +1575,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 teleports the given squad to the given point.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> ai_bring_forward <object> <real32>)
+(<void> ai_bring_forward <object> <real>)
 teleports the given mission critical AI character to the current encounter, if beyond the given range from a player
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_migrate_form <ai> <ai> <int16>)
+(<short> ai_migrate_form <ai> <ai> <short>)
 
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<boolean> ai_morph <ai> <int16>)
+(<boolean> ai_morph <ai> <short>)
 Cause an ai (or a group of ai) to morph to the given form
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1627,35 +1627,35 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns whether a platoon is in the attacking mode (or if an encounter is specified, returns whether any platoon in that encounter is attacking)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_fighting_count <ai>)
+(<short> ai_fighting_count <ai>)
 return the number of actors that are fighting in a squad or squad_group
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_living_count <ai>)
+(<short> ai_living_count <ai>)
 return the number of living actors in the specified encounter and/or squad.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> ai_living_fraction <ai>)
+(<real> ai_living_fraction <ai>)
 return the fraction [0-1] of living actors in the specified encounter and/or squad.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_in_vehicle_count <ai>)
+(<short> ai_in_vehicle_count <ai>)
 return the number of living actors in the specified encounter and/or squad who are currently in a vehicle.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_body_count <ai>)
+(<short> ai_body_count <ai>)
 return the number of actors who have died in the completiong of the given objective/task.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> ai_strength <ai>)
+(<real> ai_strength <ai>)
 return the current strength (average body vitality from 0-1) of the specified encounter and/or squad.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_swarm_count <ai>)
+(<short> ai_swarm_count <ai>)
 return the number of swarm actors in the specified encounter and/or squad.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_nonswarm_count <ai>)
+(<short> ai_nonswarm_count <ai>)
 return the number of non-swarm actors in the specified encounter and/or squad.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1667,7 +1667,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns whether two teams have an allegiance that is currently broken by traitorous behavior
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_spawn_count <ai>)
+(<short> ai_spawn_count <ai>)
 returns the number of actors spawned in the given squad or squad group
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1675,11 +1675,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns the ai attached to this object, if any
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<boolean> ai_rotate_scenario <real32> <real32> <real32> <real32>)
+(<boolean> ai_rotate_scenario <real> <real> <real> <real>)
 rotates ai points and normals (e.g. firing points, spawn points) around the given axis (x,y,z) by the given rotation angle (degrees)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<boolean> ai_translate_scenario <real32> <real32> <real32>)
+(<boolean> ai_translate_scenario <real> <real> <real>)
 translates ai points and objects by the given x y z.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1691,27 +1691,27 @@ NETWORK SAFE: Unknown, assumed unsafe
 <input bsp> <output bsp> <filter>: duplicate filtered objects in the first BSP into the second BSP; available filters: all, crates, scenery, bipeds, machines, terminals, controls, arg_devices
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> scenario_rotate <real32> <real32> <real32> <real32>)
+(<void> scenario_rotate <real> <real> <real> <real>)
 rotates scenario objects (specified by the filter) in the specified BSP around the given axis (x,y,z) by the given amount (degrees)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> scenario_reflect <real32> <real32> <real32> <real32>)
+(<void> scenario_reflect <real> <real> <real> <real>)
 reflects scenario objects (specified by the filter) in the specified BSP across the given plane (specified by normal x,y,z and offset k)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> scenario_translate <real32> <real32> <real32>)
+(<void> scenario_translate <real> <real> <real>)
 translates scenario objects (specified by the filter) in the specified BSP the given amount (x,y,z)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> scenario_rotate <real32> <real32> <real32> <real32> <string> <string>)
+(<void> scenario_rotate <real> <real> <real> <real> <string> <string>)
 rotates scenario objects (specified by the filter) in the specified BSP around the given axis (x,y,z) by the given amount (degrees)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> scenario_reflect <real32> <real32> <real32> <real32> <string> <string>)
+(<void> scenario_reflect <real> <real> <real> <real> <string> <string>)
 reflects scenario objects (specified by the filter) in the specified BSP across the given plane (specified by normal x,y,z and offset k)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> scenario_translate <real32> <real32> <real32> <string> <string>)
+(<void> scenario_translate <real> <real> <real> <string> <string>)
 translates scenario objects (specified by the filter) in the specified BSP the given amount (x,y,z)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1723,7 +1723,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 Sets the squad's current objective
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_task_status <ai>)
+(<short> ai_task_status <ai>)
 Returns the status of the given objective/task. See ai_task_status_<tab> for return codes.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1739,7 +1739,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 Returns whether a task or any of its children has a leader
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_task_count <ai>)
+(<short> ai_task_count <ai>)
 Returns the living count of the AI in the given task OR any of its children
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1779,11 +1779,11 @@ NETWORK SAFE: YEs
 Returns the vehicle that was spawned at the given spawn point
 NETWORK SAFE: YEs
 
-(<int16> ai_vehicle_get_squad_count <ai>)
+(<short> ai_vehicle_get_squad_count <ai>)
 Returns the number of vehicles in the given squad.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<vehicle> ai_vehicle_get_from_squad <ai> <int16>)
+(<vehicle> ai_vehicle_get_from_squad <ai> <short>)
 Returns the nth vehicle from the given squad.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1799,7 +1799,7 @@ NETWORK SAFE: Yes
 Returns the squad (if any) of the vehicle the player is riding in (note, the argument is a UNIT)
 NETWORK SAFE: YEs
 
-(<int16> ai_vehicle_count <ai>)
+(<short> ai_vehicle_count <ai>)
 Returns the number of vehicles being driven / ridden by the actors in the given squad/squad-group/task/etc.
 NETWORK SAFE: YEs
 
@@ -1835,7 +1835,7 @@ NETWORK SAFE: Yes
 the given group of actors is snapped into a vehicle
 NETWORK SAFE: Yes
 
-(<int16> ai_enter_squad_vehicles <ai>)
+(<short> ai_enter_squad_vehicles <ai>)
 Instructs the ai in the given squad to get in all their vehicles
 NETWORK SAFE: Yes
 
@@ -1855,7 +1855,7 @@ NETWORK SAFE: Yes
 Flips an overturned vehicle
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_combat_status <ai>)
+(<short> ai_combat_status <ai>)
 Returns the highest integer combat status in the given squad-group/squad/actor
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1875,7 +1875,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 Delete the given flock
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<boolean> flock_definition_set <string_id> <any_tag>)
+(<boolean> flock_definition_set <string_id> <any tag>)
 Set the definition of the given flock to the given tag
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1895,27 +1895,27 @@ NETWORK SAFE: Unknown, assumed unsafe
 Makes the actor lean against a wall RIGHT NOW
 NETWORK SAFE: No
 
-(<real32> ai_play_line <ai> <ai_line>)
+(<real> ai_play_line <ai> <ai_line>)
 Play the given mission dialogue line on the given ai
 NETWORK SAFE: No
 
-(<real32> ai_play_line_at_player <ai> <ai_line>)
+(<real> ai_play_line_at_player <ai> <ai_line>)
 Play the given mission dialogue line on the given ai, directing the ai's gaze at the nearest visible player
 NETWORK SAFE: No
 
-(<real32> ai_play_line_on_object <object> <ai_line>)
+(<real> ai_play_line_on_object <object> <ai_line>)
 Play the given mission dialogue line on the given object (uses first available variant)
 NETWORK SAFE: No
 
-(<real32> ai_play_line_on_object_for_team <object> <ai_line> <mp_team>)
+(<real> ai_play_line_on_object_for_team <object> <ai_line> <mp_team>)
 Play the given mission dialogue line on the given object (uses first available variant) if anyone on the local box is on the specified team
 NETWORK SAFE: Yes
 
-(<int16> ai_play_line_on_point_set <string_id> <point_reference> <int16>)
+(<short> ai_play_line_on_point_set <string_id> <point_reference> <short>)
 Play the given line (with the given 3-letter variant) on the N closest point to players in the given point set
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> ai_play_line_on_point_set <string_id> <point_reference> <int16> <string_id>)
+(<short> ai_play_line_on_point_set <string_id> <point_reference> <short> <string_id>)
 Play the given line (with the given 3-letter variant) on the N closest point to players in the given point set
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -1923,19 +1923,19 @@ NETWORK SAFE: Unknown, assumed unsafe
 pause meta game time, while paused your completion multiplier stops going down
 NETWORK SAFE: Yes
 
-(<void> campaign_metagame_award_points <object> <int16>)
+(<void> campaign_metagame_award_points <object> <short>)
 award bonus metagame points to a player
 NETWORK SAFE: Yes
 
-(<void> campaign_metagame_award_primary_skull <object> <primary_skull>)
+(<void> campaign_metagame_award_primary_skull <object> <primary skull>)
 award a primary skull to a player
 NETWORK SAFE: Yes
 
-(<void> campaign_metagame_award_secondary_skull <object> <secondary_skull>)
+(<void> campaign_metagame_award_secondary_skull <object> <secondary skull>)
 award a secondary skull to a player
 NETWORK SAFE: Yes
 
-(<void> campaign_metagame_award_event <object> <int16>)
+(<void> campaign_metagame_award_event <object> <short>)
 
 
 (<boolean> campaign_metagame_enabled)
@@ -1974,36 +1974,36 @@ NETWORK SAFE: Unknown, assumed unsafe
 Push a command script to the top of the actor's command script queue
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_reserve <ai> <int16>)
+(<void> vs_reserve <ai> <short>)
 Reserves the specified actor(s) for the use of the current script (discarding any other command scripts in the queue)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_reserve <ai> <boolean> <int16>)
+(<void> vs_reserve <ai> <boolean> <short>)
 Reserves the specified actor(s) for the use of the current script (discarding any other command scripts in the queue)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<boolean> vs_cast <ai> <boolean> <int16> <string_id>)
+(<boolean> vs_cast <ai> <boolean> <short> <string_id>)
 Cast 7 actors for a vignette (at the given priority, higher = more important)
 
-(<boolean> vs_cast <ai> <boolean> <int16> <string_id> <string_id>)
+(<boolean> vs_cast <ai> <boolean> <short> <string_id> <string_id>)
 Cast 7 actors for a vignette (at the given priority, higher = more important)
 
-(<boolean> vs_cast <ai> <boolean> <int16> <string_id> <string_id> <string_id>)
+(<boolean> vs_cast <ai> <boolean> <short> <string_id> <string_id> <string_id>)
 Cast 7 actors for a vignette (at the given priority, higher = more important)
 
-(<boolean> vs_cast <ai> <boolean> <int16> <string_id> <string_id> <string_id> <string_id>)
+(<boolean> vs_cast <ai> <boolean> <short> <string_id> <string_id> <string_id> <string_id>)
 Cast 7 actors for a vignette (at the given priority, higher = more important)
 
-(<boolean> vs_cast <ai> <boolean> <int16> <string_id> <string_id> <string_id> <string_id> <string_id>)
+(<boolean> vs_cast <ai> <boolean> <short> <string_id> <string_id> <string_id> <string_id> <string_id>)
 Cast 7 actors for a vignette (at the given priority, higher = more important)
 
-(<boolean> vs_cast <ai> <boolean> <int16> <string_id> <string_id> <string_id> <string_id> <string_id> <string_id>)
+(<boolean> vs_cast <ai> <boolean> <short> <string_id> <string_id> <string_id> <string_id> <string_id> <string_id>)
 Cast 7 actors for a vignette (at the given priority, higher = more important)
 
-(<boolean> vs_cast <ai> <boolean> <int16> <string_id> <string_id> <string_id> <string_id> <string_id> <string_id> <string_id>)
+(<boolean> vs_cast <ai> <boolean> <short> <string_id> <string_id> <string_id> <string_id> <string_id> <string_id> <string_id>)
 Cast 7 actors for a vignette (at the given priority, higher = more important)
 
-(<ai> vs_role <int16>)
+(<ai> vs_role <short>)
 Returns the given member of the cast (as per more recent vs_cast call)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2015,7 +2015,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 Command script ends prematurely when actor is damaged
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_abort_on_combat_status <int16>)
+(<void> vs_abort_on_combat_status <short>)
 Command script ends prematurely when actor's combat status rises to given level
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2031,7 +2031,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 Command script ends prematurely when actor is damaged
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_abort_on_combat_status <int16>)
+(<void> cs_abort_on_combat_status <short>)
 Command script ends prematurely when actor's combat status rises to given level
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2055,11 +2055,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Command script ends prematurely when actor is damaged
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_abort_on_combat_status <int16>)
+(<void> cs_abort_on_combat_status <short>)
 Command script ends prematurely when actor's combat status rises to given level
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_abort_on_combat_status <ai> <int16>)
+(<void> vs_abort_on_combat_status <ai> <short>)
 Command script ends prematurely when actor's combat status rises to given level
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2091,7 +2091,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 Returns true if the command script is in the ai's cs queue
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> cs_number_queued <ai>)
+(<short> cs_number_queued <ai>)
 Returns the number of queued command scripts
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2127,11 +2127,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Flies the actor to the given point (within the given tolerance)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_fly_to <point_reference> <real32>)
+(<void> cs_fly_to <point_reference> <real>)
 Flies the actor to the given point (within the given tolerance)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_fly_to <ai> <boolean> <point_reference> <real32>)
+(<void> vs_fly_to <ai> <boolean> <point_reference> <real>)
 Flies the actor to the given point (within the given tolerance)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2143,11 +2143,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Flies the actor to the given point and orients him in the appropriate direction (within the given tolerance)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_fly_to_and_face <point_reference> <point_reference> <real32>)
+(<void> cs_fly_to_and_face <point_reference> <point_reference> <real>)
 Flies the actor to the given point and orients him in the appropriate direction (within the given tolerance)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_fly_to_and_face <ai> <boolean> <point_reference> <point_reference> <real32>)
+(<void> vs_fly_to_and_face <ai> <boolean> <point_reference> <point_reference> <real>)
 Flies the actor to the given point and orients him in the appropriate direction (within the given tolerance)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2159,11 +2159,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Flies the actor through the given point (within the given tolerance)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_fly_by <point_reference> <real32>)
+(<void> cs_fly_by <point_reference> <real>)
 Flies the actor through the given point (within the given tolerance)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_fly_by <ai> <boolean> <point_reference> <real32>)
+(<void> vs_fly_by <ai> <boolean> <point_reference> <real>)
 Flies the actor through the given point (within the given tolerance)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2175,11 +2175,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Moves the actor to a specified point, attenuating throttle by the given amount when near the goal
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_go_to <point_reference> <real32>)
+(<void> cs_go_to <point_reference> <real>)
 Moves the actor to a specified point, attenuating throttle by the given amount when near the goal
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_go_to <ai> <boolean> <point_reference> <real32>)
+(<void> vs_go_to <ai> <boolean> <point_reference> <real>)
 Moves the actor to a specified point, attenuating throttle by the given amount when near the goal
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2191,11 +2191,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Actor moves toward the point, and considers it hit when it breaks the indicated plane, attenuating throttle by the given amount when near the goal
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_go_by <point_reference> <point_reference> <real32>)
+(<void> cs_go_by <point_reference> <point_reference> <real>)
 Actor moves toward the point, and considers it hit when it breaks the indicated plane, attenuating throttle by the given amount when near the goal
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_go_by <ai> <boolean> <point_reference> <point_reference> <real32>)
+(<void> vs_go_by <ai> <boolean> <point_reference> <point_reference> <real>)
 Actor moves toward the point, and considers it hit when it breaks the indicated plane, attenuating throttle by the given amount when near the goal
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2223,11 +2223,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Given a point set, AI goes toward the nearest point
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_move_in_direction <real32> <real32> <real32>)
+(<void> cs_move_in_direction <real> <real> <real>)
 Actor moves at given angle, for the given distance, optionally with the given facing (angle, distance, facing)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_move_in_direction <ai> <boolean> <real32> <real32> <real32>)
+(<void> vs_move_in_direction <ai> <boolean> <real> <real> <real>)
 Actor moves at given angle, for the given distance, optionally with the given facing (angle, distance, facing)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2247,43 +2247,43 @@ NETWORK SAFE: Unknown, assumed unsafe
 Move in the direction of the given object (and melee the target or not)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_move_towards_point <point_reference> <real32>)
+(<void> cs_move_towards_point <point_reference> <real>)
 Move to within the given radius of the given point
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_move_towards_point <ai> <boolean> <point_reference> <real32>)
+(<void> vs_move_towards_point <ai> <boolean> <point_reference> <real>)
 Move to within the given radius of the given point
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_swarm_to <point_reference> <real32>)
+(<void> cs_swarm_to <point_reference> <real>)
 A swarm swarms towards the point (or point set) in question, the individual forms stopping when they get within the given radius
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_swarm_to <ai> <boolean> <point_reference> <real32>)
+(<void> vs_swarm_to <ai> <boolean> <point_reference> <real>)
 A swarm swarms towards the point (or point set) in question, the individual forms stopping when they get within the given radius
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_swarm_from <point_reference> <real32>)
+(<void> cs_swarm_from <point_reference> <real>)
 A swarm swarms away from the point in question, going at least the given distance
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_swarm_from <ai> <boolean> <point_reference> <real32>)
+(<void> vs_swarm_from <ai> <boolean> <point_reference> <real>)
 A swarm swarms away from the point in question, going at least the given distance
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_pause <real32>)
+(<void> cs_pause <real>)
 The actor does nothing for the given number of seconds
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_pause <ai> <boolean> <real32>)
+(<void> vs_pause <ai> <boolean> <real>)
 The actor does nothing for the given number of seconds
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_grenade <point_reference> <int16>)
+(<void> cs_grenade <point_reference> <short>)
 Actor throws a grenade, either by tossing (arg2=0), lobbing (1) or bouncing (2)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_grenade <ai> <boolean> <point_reference> <int16>)
+(<void> vs_grenade <ai> <boolean> <point_reference> <short>)
 Actor throws a grenade, either by tossing (arg2=0), lobbing (1) or bouncing (2)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2295,27 +2295,27 @@ NETWORK SAFE: Unknown, assumed unsafe
 Actor throws their equipment in the direction of the given point
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_jump <real32> <real32>)
+(<void> cs_jump <real> <real>)
 Actor jumps in direction of angle at the given velocity (angle, velocity)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_jump <ai> <boolean> <real32> <real32>)
+(<void> vs_jump <ai> <boolean> <real> <real>)
 Actor jumps in direction of angle at the given velocity (angle, velocity)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_jump_to_point <real32> <real32>)
+(<void> cs_jump_to_point <real> <real>)
 Actor jumps with given horizontal and vertical velocity
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_jump_to_point <ai> <boolean> <real32> <real32>)
+(<void> vs_jump_to_point <ai> <boolean> <real> <real>)
 Actor jumps with given horizontal and vertical velocity
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_vocalize <int16>)
+(<void> cs_vocalize <short>)
 Actor emits vocalization of given type
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_vocalize <ai> <boolean> <int16>)
+(<void> vs_vocalize <ai> <boolean> <short>)
 Actor emits vocalization of given type
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2327,43 +2327,43 @@ NETWORK SAFE: Unknown, assumed unsafe
 Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length, at the given volume (0..1)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_play_sound <sound> <real32>)
+(<void> cs_play_sound <sound> <real>)
 Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length, at the given volume (0..1)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_play_sound <ai> <boolean> <sound> <real32>)
+(<void> vs_play_sound <ai> <boolean> <sound> <real>)
 Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length, at the given volume (0..1)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_play_sound <sound> <real32> <real32>)
+(<void> cs_play_sound <sound> <real> <real>)
 Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length, at the given volume (0..1)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_play_sound <ai> <boolean> <sound> <real32> <real32>)
+(<void> vs_play_sound <ai> <boolean> <sound> <real> <real>)
 Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length, at the given volume (0..1)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_action <point_reference> <int16>)
+(<void> cs_action <point_reference> <short>)
 Actor plays an AI action towards the given point. ai_action_<tab> to see action options
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_action <ai> <boolean> <point_reference> <int16>)
+(<void> vs_action <ai> <boolean> <point_reference> <short>)
 Actor plays an AI action towards the given point. ai_action_<tab> to see action options
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_action_at_object <object> <int16>)
+(<void> cs_action_at_object <object> <short>)
 Actor plays an AI action towards the given object. ai_action_<tab> to see action options
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_action_at_object <ai> <boolean> <object> <int16>)
+(<void> vs_action_at_object <ai> <boolean> <object> <short>)
 Actor plays an AI action towards the given object. ai_action_<tab> to see action options
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_action_at_player <int16>)
+(<void> cs_action_at_player <short>)
 Actor plays an AI action towards the nearest_player. ai_action_<tab> to see action options
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_action_at_player <ai> <boolean> <int16>)
+(<void> vs_action_at_player <ai> <boolean> <short>)
 Actor plays an AI action towards the nearest_player. ai_action_<tab> to see action options
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2423,11 +2423,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Play the named line in the current scene
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_die <int16>)
+(<void> cs_die <short>)
 Actor dies in specified manner
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_die <ai> <boolean> <int16>)
+(<void> vs_die <ai> <boolean> <short>)
 Actor dies in specified manner
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2439,19 +2439,19 @@ NETWORK SAFE: Unknown, assumed unsafe
 Deploy a turret at the given script point
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_approach <object> <real32> <real32> <real32>)
+(<void> cs_approach <object> <real> <real> <real>)
 (approach <object> <distance - how close I want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_approach <ai> <boolean> <object> <real32> <real32> <real32>)
+(<void> vs_approach <ai> <boolean> <object> <real> <real> <real>)
 (approach <object> <distance - how close I want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_approach_player <real32> <real32> <real32>)
+(<void> cs_approach_player <real> <real> <real>)
 (approach player <distance - how close I want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_approach_player <ai> <boolean> <real32> <real32> <real32>)
+(<void> vs_approach_player <ai> <boolean> <real> <real> <real>)
 (approach player <distance - how close I want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2479,11 +2479,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Override the actor's style
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_force_combat_status <int16>)
+(<void> cs_force_combat_status <short>)
 Force the actor's combat status (0= no override, 1=idle, 2= alert, 3= active)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_force_combat_status <ai> <int16>)
+(<void> vs_force_combat_status <ai> <short>)
 Force the actor's combat status (0= no override, 1=idle, 2= alert, 3= active)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2647,19 +2647,19 @@ NETWORK SAFE: Unknown, assumed unsafe
 Actor keeps weapon lowered
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_vehicle_speed <real32>)
+(<void> cs_vehicle_speed <real>)
 Set the speed at which the actor will drive a vehicle, expressed as a multiplier 0-1
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_vehicle_speed <ai> <real32>)
+(<void> vs_vehicle_speed <ai> <real>)
 Set the speed at which the actor will drive a vehicle, expressed as a multiplier 0-1
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_vehicle_speed_instantaneous <real32>)
+(<void> cs_vehicle_speed_instantaneous <real>)
 Set the instantaneous speed of the vehicle we're driving
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_vehicle_speed_instantaneous <ai> <real32>)
+(<void> vs_vehicle_speed_instantaneous <ai> <real>)
 Set the instantaneous speed of the vehicle we're driving
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2671,11 +2671,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Enables or disables boost
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_turn_sharpness <boolean> <real32>)
+(<void> cs_turn_sharpness <boolean> <real>)
 Set the sharpness of a vehicle turn (values 0 -> 1). Only applicable to nondirectional flying vehicles (e.g. dropships)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_turn_sharpness <ai> <boolean> <real32>)
+(<void> vs_turn_sharpness <ai> <boolean> <real>)
 Set the sharpness of a vehicle turn (values 0 -> 1). Only applicable to nondirectional flying vehicles (e.g. dropships)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2687,11 +2687,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Actor blocks until pathfinding calls succeed
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_set_pathfinding_radius <real32>)
+(<void> cs_set_pathfinding_radius <real>)
 Sets the actor's pathfinding radius (this distance at which a destination is considered to have been reached) for the remainder of the command script
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_set_pathfinding_radius <ai> <real32>)
+(<void> vs_set_pathfinding_radius <ai> <real>)
 Sets the actor's pathfinding radius (this distance at which a destination is considered to have been reached) for the remainder of the command script
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2711,11 +2711,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Actor stops approaching
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_movement_mode <int16>)
+(<void> cs_movement_mode <short>)
 Actor switches to given animation mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_movement_mode <ai> <int16>)
+(<void> vs_movement_mode <ai> <short>)
 Actor switches to given animation mode
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2727,11 +2727,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Actor crouches / uncrouches, transitioning over the given number of seconds
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_crouch <boolean> <real32>)
+(<void> cs_crouch <boolean> <real>)
 Actor crouches / uncrouches, transitioning over the given number of seconds
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_crouch <ai> <boolean> <real32>)
+(<void> vs_crouch <ai> <boolean> <real>)
 Actor crouches / uncrouches, transitioning over the given number of seconds
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2799,27 +2799,27 @@ NETWORK SAFE: Unknown, assumed unsafe
 Stops the specified impulse sound.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_player_melee <int32>)
+(<void> cs_player_melee <long>)
 Actor performs player-specific melee
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_player_melee <ai> <boolean> <int32>)
+(<void> vs_player_melee <ai> <boolean> <long>)
 Actor performs player-specific melee
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_melee_direction <int32>)
+(<void> cs_melee_direction <long>)
 Actor performs melee in provided direction (0= front, 1= back, 2= offhand, 3= tackle)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_melee_direction <ai> <boolean> <int32>)
+(<void> vs_melee_direction <ai> <boolean> <long>)
 Actor performs melee in provided direction (0= front, 1= back, 2= offhand, 3= tackle)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cs_smash_direction <int32>)
+(<void> cs_smash_direction <long>)
 Actor performs smash in provided direction
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vs_smash_direction <ai> <boolean> <int32>)
+(<void> vs_smash_direction <ai> <boolean> <long>)
 Actor performs smash in provided direction
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2827,11 +2827,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 toggles script control of the camera.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_set <cutscene_camera_point> <int16>)
+(<void> camera_set <cutscene_camera_point> <short>)
 moves the camera to the specified camera point over the specified number of ticks.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_set_relative <cutscene_camera_point> <int16> <object>)
+(<void> camera_set_relative <cutscene_camera_point> <short> <object>)
 moves the camera to the specified camera point over the specified number of ticks (position is relative to the specified object).
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2843,23 +2843,23 @@ NETWORK SAFE: Unknown, assumed unsafe
 begins a prerecorded camera animation synchronized to unit relative to cutscene flag.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_set_animation_with_speed <animation_graph> <string_id> <real32>)
+(<void> camera_set_animation_with_speed <animation_graph> <string_id> <real>)
 begins a prerecorded camera animation.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_set_animation_relative_with_speed <animation_graph> <string_id> <unit> <cutscene_flag> <real32>)
+(<void> camera_set_animation_relative_with_speed <animation_graph> <string_id> <unit> <cutscene_flag> <real>)
 begins a prerecorded camera animation synchronized to unit relative to cutscene flag.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_set_animation_relative_with_speed_loop <animation_graph> <string_id> <unit> <cutscene_flag> <real32> <boolean>)
+(<void> camera_set_animation_relative_with_speed_loop <animation_graph> <string_id> <unit> <cutscene_flag> <real> <boolean>)
 begins a prerecorded camera animation synchronized to unit relative to cutscene flag.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_set_animation_relative_with_speed_loop_offset <animation_graph> <string_id> <unit> <cutscene_flag> <real32> <boolean> <real32>)
+(<void> camera_set_animation_relative_with_speed_loop_offset <animation_graph> <string_id> <unit> <cutscene_flag> <real> <boolean> <real>)
 begins a prerecorded camera animation synchronized to unit relative to cutscene flag.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_predict_resources_at_frame <animation_graph> <string_id> <unit> <cutscene_flag> <int32>)
+(<void> camera_predict_resources_at_frame <animation_graph> <string_id> <unit> <cutscene_flag> <long>)
 predict resources at a frame in camera animation.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2875,7 +2875,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 makes the scripted camera follow the path of a cinematic scene.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_set_cinematic_scene <cinematic_scene_definition> <int32> <cutscene_flag>)
+(<void> camera_set_cinematic_scene <cinematic scene definition> <long> <cutscene_flag>)
 sets the scene, shot, and cutscene flag for the cinematic camera (NOTE: camera must be in cinematic mode by calling camera_set_cinematic).
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2887,19 +2887,19 @@ NETWORK SAFE: Unknown, assumed unsafe
 all subsequent camera placement in sapien will be marked as worldspace
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> camera_time)
+(<short> camera_time)
 returns the number of ticks remaining in the current camera interpolation.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_set_field_of_view <real32> <int16>)
+(<void> camera_set_field_of_view <real> <short>)
 sets the field of view
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_camera_set_easing_in <real32> <real32> <real32> <real32> <real32> <real32>)
+(<void> cinematic_camera_set_easing_in <real> <real> <real> <real> <real> <real>)
 controls the camera easing from player position
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_camera_set_easing_out <real32>)
+(<void> cinematic_camera_set_easing_out <real>)
 controls the camera easing back to the player position
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2907,11 +2907,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Print status lines for cinematic debugging
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_set_pan <cutscene_camera_point> <int16>)
+(<void> camera_set_pan <cutscene_camera_point> <short>)
 moves the camera to the specified camera point over the specified number of ticks with a constant speed.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_pan <cutscene_camera_point> <cutscene_camera_point> <int16> <int16> <real32> <int16> <real32>)
+(<void> camera_pan <cutscene_camera_point> <cutscene_camera_point> <short> <short> <real> <short> <real>)
 camera_pan <start point> <end point> <ticks> <ease-in ticks> <start velocity scale> <ease-out ticks> <end velocity scale>
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -2943,11 +2943,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns the actual current difficulty setting without lying
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> game_insertion_point_get)
+(<short> game_insertion_point_get)
 returns the number of the insertion point the map was started at
 NETWORK SAFE: Yes.
 
-(<void> game_insertion_point_set <int16>)
+(<void> game_insertion_point_set <short>)
 retroactively sets the insertion point that we started at.
 NETWORK SAFE: Unknown, assumed unsafe.
 
@@ -3107,7 +3107,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns true if any player has pressed the right shoulder button since the last call to (player_action_test_reset).
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<boolean> player_action_test_waypoint_activate <int32>)
+(<boolean> player_action_test_waypoint_activate <long>)
 returns true if any player has pressed the button action to activate the waypoint since the last call to (player_action_test_reset).
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3214,19 +3214,19 @@ NETWORK SAFE: Unknown, assumed unsafe
 true if the first player is looking down
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player0_set_pitch <real32> <int32>)
+(<void> player0_set_pitch <real> <long>)
 sets up player look up test
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player1_set_pitch <real32> <int32>)
+(<void> player1_set_pitch <real> <long>)
 sets up player look up test
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player2_set_pitch <real32> <int32>)
+(<void> player2_set_pitch <real> <long>)
 sets up player look up test
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player3_set_pitch <real32> <int32>)
+(<void> player3_set_pitch <real> <long>)
 sets up player look up test
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3238,7 +3238,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 true if the first player pushed backward on lookstick
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> debug_teleport_player <int32> <int32>)
+(<void> debug_teleport_player <long> <long>)
 for testing: teleports one player to another's location
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3250,7 +3250,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 starts the map from the beginning with a new random seed.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> switch_bsp <int32>)
+(<void> switch_bsp <long>)
 switches to a different zone set
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3258,15 +3258,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 switches to a different zone set
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> current_zone_set)
+(<long> current_zone_set)
 returns the current zone set
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> current_zone_set_fully_active)
+(<long> current_zone_set_fully_active)
 returns the current zone set
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> switch_map_and_zone_set <string> <int32>)
+(<void> switch_map_and_zone_set <string> <long>)
 switches to a different scenario and zone set
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3282,11 +3282,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 prints the value of all global status variables.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> record_movie <int16> <real32> <int16> <int16>)
+(<void> record_movie <short> <real> <short> <short>)
 <frame rate> <seconds> <width> <height>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> record_movie_distributed <int16> <int32> <int16> <int32> <int32>)
+(<void> record_movie_distributed <short> <long> <short> <long> <long>)
 <frame rate> <seconds> <screen size> <mod count> <mod index>
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3298,15 +3298,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 takes a screenshot and saves as <name>.tif
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> screenshot_big <int16> <string>)
+(<void> screenshot_big <short> <string>)
 takes an NxN multiple-page screenshot and saves as <name>.tif
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> screenshot_big_raw <int16> <string>)
+(<void> screenshot_big_raw <short> <string>)
 takes an NxN multiple-page screenshot and saves as an HDR <name>.tif
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> screenshot_size <int16> <int16> <string>)
+(<void> screenshot_size <short> <short> <string>)
 takes a <width> x <height> screenshot and saves as an HDR <name>.tif
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3331,7 +3331,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> screenshot_set_path <string>)
 
 
-(<void> screenshot_unknown347 <string> <int32> <real32> <real32> <real32>)
+(<void> screenshot_unknown347 <string> <long> <real> <real> <real>)
 
 
 (<void> main_menu)
@@ -3353,7 +3353,7 @@ NETWORK SAFE: No, for init.txt only
 (<void> game_set_variant <string>)
 Launches a game variant a on a map
 
-(<void> game_splitscreen <int32>)
+(<void> game_splitscreen <long>)
 debug map launching: sets the number of multiplayer splitscreen players for the next map.
 NETWORK SAFE: No, for init.txt only
 
@@ -3361,23 +3361,23 @@ NETWORK SAFE: No, for init.txt only
 debug map launching: sets the difficulty of the next map.
 NETWORK SAFE: No, for init.txt only
 
-(<void> game_active_primary_skulls <int32>)
+(<void> game_active_primary_skulls <long>)
 debug map launching: sets the active primary skulls of the next map.
 NETWORK SAFE: No, for init.txt only
 
-(<void> game_active_secondary_skulls <int32>)
+(<void> game_active_secondary_skulls <long>)
 debug map launching: sets the active primary skulls of the next map.
 NETWORK SAFE: No, for init.txt only
 
-(<void> game_coop_players <int32>)
+(<void> game_coop_players <long>)
 debug map launching: sets the number of coop players for the next map.
 NETWORK SAFE: No, for init.txt only
 
-(<void> game_initial_zone_set <int32>)
+(<void> game_initial_zone_set <long>)
 debug map launching: sets the initial bsp for the next map.
 NETWORK SAFE: No, for init.txt only
 
-(<void> game_tick_rate <int32>)
+(<void> game_tick_rate <long>)
 debug map launching: sets the tick rate for the next map.
 NETWORK SAFE: No, for init.txt only
 
@@ -3389,11 +3389,11 @@ NETWORK SAFE: No, for init.txt only
 nicely starts the current game once the pregame lobby is stable
 NETWORK SAFE: No, for init.txt only
 
-(<void> game_start_when_joined <int32>)
+(<void> game_start_when_joined <long>)
 nicely starts a game when the specified number of users are in the lobby
 NETWORK SAFE: No, for init.txt only
 
-(<void> game_rate <real32> <real32> <real32>)
+(<void> game_rate <real> <real> <real>)
 changes game update rate (DANGER: only use if you know what you're doing!)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3449,15 +3449,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 toggles the profile display on/off
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> profiler_set_thread <int32>)
+(<void> profiler_set_thread <long>)
 sets the thread index being profiled
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> profiler_set_sort_method <int32>)
+(<void> profiler_set_sort_method <long>)
 sets the sorting method used
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> profiler_set_range <int32>)
+(<void> profiler_set_range <long>)
 sets the collection range used
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3465,15 +3465,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 sets an attribute to profile by name
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> trace_next_frame <int32>)
+(<void> trace_next_frame <long>)
 creates a tracedump of the next frame
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> trace_next_frame_to_file <int32> <string>)
+(<void> trace_next_frame_to_file <long> <string>)
 creates a tracedump of the next frame in a specific file
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> trace_tick <int32>)
+(<void> trace_tick <long>)
 creates a tracedump of a specific game tick
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3497,11 +3497,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 break when the following vocalization is chosen for utterance
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> fade_in <real32> <real32> <real32> <int16>)
+(<void> fade_in <real> <real> <real> <short>)
 does a screen fade in from a particular color
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> fade_out <real32> <real32> <real32> <int16>)
+(<void> fade_out <real> <real> <real> <short>)
 does a screen fade out to a particular color
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3533,7 +3533,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 activates the chapter title
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_set_title_delayed <cutscene_title> <real32>)
+(<void> cinematic_set_title_delayed <cutscene_title> <real>)
 activates the chapter title, delayed by <real> seconds
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3541,15 +3541,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 suppresses or enables the automatic creation of objects during cutscenes due to a bsp switch
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_subtitle <string_id> <real32>)
+(<void> cinematic_subtitle <string_id> <real>)
 displays the named subtitle for <real> seconds
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_set <cinematic_definition>)
+(<void> cinematic_set <cinematic definition>)
 sets the cinematic name for the current cinematic.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_set_shot <cinematic_scene_definition> <int32>)
+(<void> cinematic_set_shot <cinematic scene definition> <long>)
 sets the scene and shot for the current cinematic.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3557,11 +3557,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 Print the stored scene and shot information to the screen
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_set_early_exit <int32>)
+(<void> cinematic_set_early_exit <long>)
 Used to store the state of skippable cinematics
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> cinematic_get_early_exit)
+(<long> cinematic_get_early_exit)
 Used to retrieve the state of skippable cinematics
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3585,7 +3585,7 @@ NETWORKING SAFE: Unknown, assumed unsafe
 Releases everything created by the cinematics system
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_clips_initialize_for_shot <int32>)
+(<void> cinematic_clips_initialize_for_shot <long>)
 intializes the cinematic clip planes for the given shot of the current cinematic
 NETWORKING SAFE: Unknown, assumed unsafe
 
@@ -3593,7 +3593,7 @@ NETWORKING SAFE: Unknown, assumed unsafe
 destroys any existing cinematic clip planes for the current cinematic
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_lights_initialize_for_shot <int32>)
+(<void> cinematic_lights_initialize_for_shot <long>)
 intializes the cinematic lighting for the given shot of the current cinematic
 NETWORKING SAFE: Unknown, assumed unsafe
 
@@ -3617,10 +3617,10 @@ NETWORK SAFE: Unknown, assumed unsafe
 Rebuild all cinematic lighting (SH only)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_lighting_update_dynamic_light_direction <string> <int32> <real32> <real32> <real32>)
+(<void> cinematic_lighting_update_dynamic_light_direction <string> <long> <real> <real> <real>)
 Updates the direction of a loaded cinematic dynamic light
 
-(<void> cinematic_lighting_update_sh_light <string> <int32> <real32> <real32> <real32> <real32> <real32> <real32>)
+(<void> cinematic_lighting_update_sh_light <string> <long> <real> <real> <real> <real> <real> <real>)
 Updates the direction, intensity, and color of a loaded cinematic sh light
 
 (<object> cinematic_object_get <string>)
@@ -3635,91 +3635,91 @@ NETWORKING SAFE: Unknown, assumed unsafe
 Used for briefing cinematics
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<cinematic_definition> cinematic_tag_reference_get_cinematic <int32>)
+(<cinematic definition> cinematic_tag_reference_get_cinematic <long>)
 Retrieve a cinematic tag from the cinematic system
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<cinematic_scene_definition> cinematic_tag_reference_get_scene <int32> <int32>)
+(<cinematic scene definition> cinematic_tag_reference_get_scene <long> <long>)
 Retrieve a cinematic tag from the cinematic system
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<effect> cinematic_tag_reference_get_effect <int32> <int32> <int32> <int32>)
+(<effect> cinematic_tag_reference_get_effect <long> <long> <long> <long>)
 Retrieve an effect tag from the cinematic system
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<sound> cinematic_tag_reference_get_dialogue <int32> <int32> <int32> <int32>)
+(<sound> cinematic_tag_reference_get_dialogue <long> <long> <long> <long>)
 Retrieve a sound tag from the cinematic system
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<sound> cinematic_tag_reference_get_music <int32> <int32> <int32> <int32>)
+(<sound> cinematic_tag_reference_get_music <long> <long> <long> <long>)
 Retrieve a sound tag from the cinematic system
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<looping_sound> cinematic_tag_reference_get_music_looping <int32> <int32> <int32> <int32>)
+(<looping_sound> cinematic_tag_reference_get_music_looping <long> <long> <long> <long>)
 Retrieve a looping sound tag from the cinematic system
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<animation_graph> cinematic_tag_reference_get_animation <int32> <int32> <int32>)
+(<animation_graph> cinematic_tag_reference_get_animation <long> <long> <long>)
 Retrieve a looping sound tag from the cinematic system
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<boolean> cinematic_scripting_object_coop_flags_valid <int32> <int32> <int32>)
+(<boolean> cinematic_scripting_object_coop_flags_valid <long> <long> <long>)
 Evaluate if a cinematic object should be displayed for the current coop flags
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_fade_out <real32> <real32> <real32> <int16>)
+(<void> cinematic_scripting_fade_out <real> <real> <real> <short>)
 Fade out at the end of the cinematic
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_create_object <int32> <int32> <int32>)
+(<void> cinematic_scripting_create_object <long> <long> <long>)
 Create a manually placed cinematic object
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_create_cinematic_object <int32> <int32> <int32>)
+(<void> cinematic_scripting_create_cinematic_object <long> <long> <long>)
 Create a manually placed cinematic object
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_start_animation <int32> <int32> <int32> <string_id>)
+(<void> cinematic_scripting_start_animation <long> <long> <long> <string_id>)
 Animate a manually placed cinematic object
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_destroy_object <int32> <int32> <int32>)
+(<void> cinematic_scripting_destroy_object <long> <long> <long>)
 Destroy a cinematic object
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_start_effect <int32> <int32> <int32> <int32> <object>)
+(<void> cinematic_scripting_start_effect <long> <long> <long> <long> <object>)
 Play a cinematic effect
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_start_music <int32> <int32> <int32> <int32>)
+(<void> cinematic_scripting_start_music <long> <long> <long> <long>)
 Play a cinematic music
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_start_dialogue <int32> <int32> <int32> <int32> <object>)
+(<void> cinematic_scripting_start_dialogue <long> <long> <long> <long> <object>)
 Play a cinematic dialogue
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_stop_music <int32> <int32> <int32> <int32>)
+(<void> cinematic_scripting_stop_music <long> <long> <long> <long>)
 Stops a cinematic music
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_create_and_animate_object <int32> <int32> <int32> <string_id> <boolean>)
+(<void> cinematic_scripting_create_and_animate_object <long> <long> <long> <string_id> <boolean>)
 Create and Animate a cinematic object.
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_create_and_animate_cinematic_object <int32> <int32> <int32> <string_id> <boolean>)
+(<void> cinematic_scripting_create_and_animate_cinematic_object <long> <long> <long> <string_id> <boolean>)
 Create and Animate a cinematic object.
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_create_and_animate_object_no_animation <int32> <int32> <int32> <boolean>)
+(<void> cinematic_scripting_create_and_animate_object_no_animation <long> <long> <long> <boolean>)
 Create and Animate a cinematic object.
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_create_and_animate_cinematic_object_no_animation <int32> <int32> <int32> <boolean>)
+(<void> cinematic_scripting_create_and_animate_cinematic_object_no_animation <long> <long> <long> <boolean>)
 Create and Animate a cinematic object.
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_play_cortana_effect <int32> <int32> <int32> <int32>)
+(<void> cinematic_scripting_play_cortana_effect <long> <long> <long> <long>)
 Play the associated cortana effect.
 NETWORKING SAFE: Unknown, assumed unsafe
 
@@ -3727,7 +3727,7 @@ NETWORKING SAFE: Unknown, assumed unsafe
 starts an attract mode movie
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> attract_mode_set_seconds <int32>)
+(<void> attract_mode_set_seconds <long>)
 sets number of seconds of the attract mode countdown timer.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3767,11 +3767,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 saves right now, even if the game is in an immediate-loss state (NEVER USE THIS! EVER!)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> game_insertion_point_unlock <int16>)
+(<void> game_insertion_point_unlock <short>)
 unlocks the given insertion point for the current map for all players
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> game_insertion_point_lock <int16>)
+(<void> game_insertion_point_lock <short>)
 unlocks the given insertion point for the current map for all players
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3863,7 +3863,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 sets target player for respawn influencer debugging display
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> debug_spawning_use_history <int32>)
+(<void> debug_spawning_use_history <long>)
 sets the saved respawn state for respawn influencer debugging display
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -3879,47 +3879,47 @@ NETWORK SAFE: Unknown, assumed unsafe
 export the current game engine variant settings to the specified text file
 NETWORK SAFE: No
 
-(<void> game_engine_event_test_general <int32>)
+(<void> game_engine_event_test_general <long>)
 test game engine general event
 NETWORK SAFE: Unkown, assumed unsafe
 
-(<void> game_engine_event_test_flavor <int32>)
+(<void> game_engine_event_test_flavor <long>)
 test game engine flavor event
 NETWORK SAFE: Unkown, assumed unsafe
 
-(<void> game_engine_event_test_slayer <int32>)
+(<void> game_engine_event_test_slayer <long>)
 test game engine slayer event
 NETWORK SAFE: Unkown, assumed unsafe
 
-(<void> game_engine_event_test_ctf <int32>)
+(<void> game_engine_event_test_ctf <long>)
 test game engine ctf event
 NETWORK SAFE: Unkown, assumed unsafe
 
-(<void> game_engine_event_test_oddball <int32>)
+(<void> game_engine_event_test_oddball <long>)
 test game engine oddball event
 NETWORK SAFE: Unkown, assumed unsafe
 
-(<void> game_engine_event_test_king <int32>)
+(<void> game_engine_event_test_king <long>)
 test game engine king event
 NETWORK SAFE: Unkown, assumed unsafe
 
-(<void> game_engine_event_test_vip <int32>)
+(<void> game_engine_event_test_vip <long>)
 test game engine vip event
 NETWORK SAFE: Unkown, assumed unsafe
 
-(<void> game_engine_event_test_juggernaut <int32>)
+(<void> game_engine_event_test_juggernaut <long>)
 test game engine juggernaut event
 NETWORK SAFE: Unkown, assumed unsafe
 
-(<void> game_engine_event_test_territories <int32>)
+(<void> game_engine_event_test_territories <long>)
 test game engine territories event
 NETWORK SAFE: Unkown, assumed unsafe
 
-(<void> game_engine_event_test_assault <int32>)
+(<void> game_engine_event_test_assault <long>)
 test game engine assault event
 NETWORK SAFE: Unkown, assumed unsafe
 
-(<void> game_engine_event_test_infection <int32>)
+(<void> game_engine_event_test_infection <long>)
 test game engine infection event
 NETWORK SAFE: Unkown, assumed unsafe
 
@@ -4005,7 +4005,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> sound_ui_screen_term)
 
 
-(<void> sound_set_tag_parameter_unsafe <string> <string> <int32> <int32> <int32> <real32> <real32> <real32>)
+(<void> sound_set_tag_parameter_unsafe <string> <string> <long> <long> <long> <real> <real> <real>)
 this is the second sign of the coming of the antichrist
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4013,27 +4013,27 @@ NETWORK SAFE: Unknown, assumed unsafe
 your mom part 2.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_impulse_trigger <sound> <object> <real32> <int32>)
+(<void> sound_impulse_trigger <sound> <object> <real> <long>)
 plays an impulse sound from the specified source object (or "none"), with the specified scale.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_impulse_start <sound> <object> <real32>)
+(<void> sound_impulse_start <sound> <object> <real>)
 plays an impulse sound from the specified source object (or "none"), with the specified scale.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_impulse_start_cinematic <sound> <object> <real32> <real32> <real32>)
+(<void> sound_impulse_start_cinematic <sound> <object> <real> <real> <real>)
 <sound> <object> <scale> <3d gain> <first person gain> plays an impulse sound from the specified source object.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_impulse_start_effect <sound> <object> <real32> <string_id>)
+(<void> sound_impulse_start_effect <sound> <object> <real> <string_id>)
 plays an impulse sound from the specified source object (or "none"), with the specified scale and effect.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_impulse_start_with_subtitle <sound> <object> <real32> <string_id> <string_id>)
+(<void> sound_impulse_start_with_subtitle <sound> <object> <real> <string_id> <string_id>)
 plays an impulse sound from the specified source object (or "none"), with the specified scale and displays a subtitle.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> sound_impulse_language_time <sound>)
+(<long> sound_impulse_language_time <sound>)
 returns the time remaining for the specified impulse sound. DO NOT CALL IN CUTSCENES.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4041,7 +4041,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 stops the specified impulse sound.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_impulse_start_3d <sound> <real32> <real32>)
+(<void> sound_impulse_start_3d <sound> <real> <real>)
 <sound> <azimuth> <scale> at the sound's minimum distance
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4057,7 +4057,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 your mom.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_looping_start <looping_sound> <object> <real32>)
+(<void> sound_looping_start <looping_sound> <object> <real>)
 plays a looping sound from the specified source object (or "none"), with the specified scale.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4069,7 +4069,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 stops the specified looping sound immediately.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_looping_set_scale <looping_sound> <real32>)
+(<void> sound_looping_set_scale <looping_sound> <real>)
 changes the scale of the sound (which should affect the volume) within the range 0 to 1.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4093,11 +4093,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 enables or disables all sound classes matching the substring.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_class_set_gain <string> <real32> <int16>)
+(<void> sound_class_set_gain <string> <real> <short>)
 changes the gain on the specified sound class(es) to the specified gain over the specified number of ticks.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_class_set_gain_db <string> <real32> <int16>)
+(<void> sound_class_set_gain_db <string> <real> <short>)
 changes the gain on the specified sound class(es) to the specified gain(dB) over the specified number of ticks.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4105,19 +4105,19 @@ NETWORK SAFE: Unknown, assumed unsafe
 enables or disables the ducker on all sound classes matching the substring.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> debug_sound_environment_parameter <int32> <real32>)
+(<void> debug_sound_environment_parameter <long> <real>)
 
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_set_global_effect <string_id> <real32>)
+(<void> sound_set_global_effect <string_id> <real>)
 bleh
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_set_global_effect_scale <string_id> <real32>)
+(<void> sound_set_global_effect_scale <string_id> <real>)
 more bleh
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> vehicle_auto_turret <vehicle> <trigger_volume> <real32> <real32> <real32>)
+(<void> vehicle_auto_turret <vehicle> <trigger_volume> <real> <real> <real>)
 Sets the specified trigger volume and parameters for an auto turret
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4125,7 +4125,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 stops the vehicle from running real physics and runs fake hovering physics instead.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> vehicle_count_bipeds_killed <vehicle>)
+(<long> vehicle_count_bipeds_killed <vehicle>)
 returns how many people this vehicle has killed
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4172,7 +4172,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 Resets all player training data
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> hud_activate_team_nav_point_flag <team> <cutscene_flag> <real32>)
+(<void> hud_activate_team_nav_point_flag <team> <cutscene_flag> <real>)
 activates a nav point type <string> attached to a team anchored to a flag with a vertical offset <real>. If the player is not local to the machine, this will fail
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4188,7 +4188,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 turns the chud texturecam on/off
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> chud_cortana_set_range_multiplier <real32>)
+(<void> chud_cortana_set_range_multiplier <real>)
 scales the cortana effect distances
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4248,7 +4248,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 hides/shows the consumables chud
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> chud_cinematic_fade <real32> <real32>)
+(<void> chud_cinematic_fade <real> <real>)
 parameter 1 is how, parameter 2 is when
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4260,7 +4260,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 tick the bonus timer
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> chud_bonus_round_set_timer <real32>)
+(<void> chud_bonus_round_set_timer <real>)
 set the bonus timer
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4292,43 +4292,43 @@ NETWORK SAFE: Unknown, assumed unsafe
 prints out a list of all error geometry types and counts
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_effect_set_max_translation <real32> <real32> <real32>)
+(<void> player_effect_set_max_translation <real> <real> <real>)
 <x> <y> <z>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_effect_set_max_rotation <real32> <real32> <real32>)
+(<void> player_effect_set_max_rotation <real> <real> <real>)
 <yaw> <pitch> <roll>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_effect_set_max_rumble <real32> <real32>)
+(<void> player_effect_set_max_rumble <real> <real>)
 <left> <right>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_effect_start <real32> <real32>)
+(<void> player_effect_start <real> <real>)
 <max_intensity> <attack time>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_effect_stop <real32>)
+(<void> player_effect_stop <real>)
 <decay>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_effect_set_max_translation_for_player <unit> <real32> <real32> <real32>)
+(<void> player_effect_set_max_translation_for_player <unit> <real> <real> <real>)
 <x> <y> <z>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_effect_set_max_rotation_for_player <unit> <real32> <real32> <real32>)
+(<void> player_effect_set_max_rotation_for_player <unit> <real> <real> <real>)
 <yaw> <pitch> <roll>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_effect_set_max_rumble_for_player <unit> <real32> <real32>)
+(<void> player_effect_set_max_rumble_for_player <unit> <real> <real>)
 <left> <right>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_effect_start_for_player <unit> <real32> <real32>)
+(<void> player_effect_start_for_player <unit> <real> <real>)
 <max_intensity> <attack time>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_effect_stop_for_player <unit> <real32>)
+(<void> player_effect_stop_for_player <unit> <real>)
 <decay>
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4344,7 +4344,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 resets the time code timer
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> script_screen_effect_set_value <int16> <real32>)
+(<void> script_screen_effect_set_value <short> <real>)
 sets a screen effect script value
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4352,11 +4352,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 starts screen effect pass TRUE to clear
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_screen_effect_set_crossfade <real32>)
+(<void> cinematic_screen_effect_set_crossfade <real>)
 transition-time
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_screen_effect_set_crossfade <real32> <real32>)
+(<void> cinematic_screen_effect_set_crossfade <real> <real>)
 transition-time
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4364,11 +4364,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns control of the screen effects to the rest of the game
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_set_near_clip_distance <real32>)
+(<void> cinematic_set_near_clip_distance <real>)
 
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_set_far_clip_distance <real32>)
+(<void> cinematic_set_far_clip_distance <real>)
 
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4376,7 +4376,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 enable/disable atmosphere fog
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> atmosphere_fog_override_fade <int32> <real32> <real32>)
+(<void> atmosphere_fog_override_fade <long> <real> <real>)
 override the atmosphere fog setting to <index> by <percentage> in <seconds>
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4392,7 +4392,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 enable/disable patchy fog
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_set_environment_map_attenuation <real32> <real32> <real32>)
+(<void> cinematic_set_environment_map_attenuation <real> <real> <real>)
 interpolates environment-map attenuation (on flagged shaders) from <low> to <high> over <time>
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4404,7 +4404,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 resets environment-map bitmap (on flagged shaders) to default instantly
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_set_environment_map_tint <real32> <real32> <real32> <real32> <real32> <real32> <real32> <real32>)
+(<void> cinematic_set_environment_map_tint <real> <real> <real> <real> <real> <real> <real> <real>)
 perpendicular color: (red green blue brightness), parallel color: (red green blue brightness)... sets environment-map tint (on flagged shaders) instantly
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4412,7 +4412,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 resets environment-map tint (on flagged shaders) to default instantly
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_layer <int32> <real32> <real32>)
+(<void> cinematic_layer <long> <real> <real>)
 interpolates the value of <cinematic layer x> from current position to <value> over <time>
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4420,7 +4420,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 Are you the best?
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> player_has_mad_secret_skills <int32>)
+(<void> player_has_mad_secret_skills <long>)
 You are the best!
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4428,7 +4428,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 invert look on all attached controllers
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> controller_look_speed <int16>)
+(<void> controller_look_speed <short>)
 set look speed for all attached controllers
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4440,7 +4440,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns TRUE if player0's look pitch is inverted
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> controller_unlock_solo_levels <int16>)
+(<long> controller_unlock_solo_levels <short>)
 
 
 (<void> controller_set_look_inverted <controller> <boolean>)
@@ -4463,15 +4463,15 @@ NETWORK SAFE: No
 set crouch lock for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_button_preset <controller> <button_preset>)
+(<void> controller_set_button_preset <controller> <button preset>)
 set button preset for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_joystick_preset <controller> <joystick_preset>)
+(<void> controller_set_joystick_preset <controller> <joystick preset>)
 set joystick preset for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_look_sensitivity <controller> <int16>)
+(<void> controller_set_look_sensitivity <controller> <short>)
 set look sensitivity for specified controller
 NETWORK SAFE: No
 
@@ -4499,42 +4499,42 @@ NETWORK SAFE: No
 <controller> lock all model permutations for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_single_player_level_completed <controller> <int32> <boolean> <game_difficulty> <boolean>)
+(<void> controller_set_single_player_level_completed <controller> <long> <boolean> <game_difficulty> <boolean>)
 <controller> <level index> <co-op> <difficulty> <completed> set the single player levels completed state for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_player_character_type <controller> <player_character_type>)
+(<void> controller_set_player_character_type <controller> <player character type>)
 set player character type for specified controller
 
-(<void> controller_set_emblem_info <controller> <int16> <int16> <int16> <int16>)
+(<void> controller_set_emblem_info <controller> <short> <short> <short> <short>)
 set emblem for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_voice_output_setting <controller> <voice_output_setting>)
+(<void> controller_set_voice_output_setting <controller> <voice output setting>)
 set voice output setting for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_voice_mask <controller> <voice_mask>)
+(<void> controller_set_voice_mask <controller> <voice mask>)
 set voice mask for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_subtitle_setting <controller> <subtitle_setting>)
+(<void> controller_set_subtitle_setting <controller> <subtitle setting>)
 set subtitle setting for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_campaign_solo_high_score <controller> <int32> <real32>)
+(<void> controller_set_campaign_solo_high_score <controller> <long> <real>)
 <controller> <map_id> <score> set high score for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_campaign_coop_high_score <controller> <int32> <real32> <int32>)
+(<void> controller_set_campaign_coop_high_score <controller> <long> <real> <long>)
 <controller> <map_id> <score> <player_count> set high score for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_survival_solo_high_score <controller> <int32> <int16> <real32>)
+(<void> controller_set_survival_solo_high_score <controller> <long> <short> <real>)
 <controller> <map_id> <insertion point> <score> set high score for specified controller
 NETWORK SAFE: No
 
-(<void> controller_set_survival_coop_high_score <controller> <int32> <int16> <real32> <int32>)
+(<void> controller_set_survival_coop_high_score <controller> <long> <short> <real> <long>)
 <controller> <map_id> <insertion point> <score> <player_count> set high score for specified controller
 NETWORK SAFE: No
 
@@ -4578,7 +4578,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 dump the UI memory tracked allocations to a specified file
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> ui_time_scale_step <real32>)
+(<void> ui_time_scale_step <real>)
 move the ui time forward by a specified amount on next tick
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4602,19 +4602,19 @@ NETWORK SAFEL No
 tells the window location manager to stop bringing up screens on its own
 NETWORK SAFEL No
 
-(<void> gui_error_post <string_id> <int32> <boolean>)
+(<void> gui_error_post <string_id> <long> <boolean>)
 <error_code> <controller_index> <must_be_cleared> sets an error condition in the ui
 NETWORK SAFEL No
 
-(<void> gui_error_post_toast <string_id> <int32> <boolean>)
+(<void> gui_error_post_toast <string_id> <long> <boolean>)
 <error_code> <controller_index> <must_be_cleared> sets an error condition in the ui
 NETWORK SAFEL No
 
-(<void> gui_error_resolve <string_id> <int32>)
+(<void> gui_error_resolve <string_id> <long>)
 <error_name> <controller_index> resolves an error condition in the ui
 NETWORK SAFEL No
 
-(<void> gui_error_clear <string_id> <int32>)
+(<void> gui_error_clear <string_id> <long>)
 <error_name> <controller_index> clears an error condition in the ui
 NETWORK SAFEL No
 
@@ -4622,11 +4622,11 @@ NETWORK SAFEL No
 <dialog name>
 NETWORK SAFEL No
 
-(<void> gui_spartan_milestone_show <int16>)
+(<void> gui_spartan_milestone_show <short>)
 show dialog for milestone upgrade (1..3)
 NETWORK SAFE: No
 
-(<void> gui_spartan_rank_show <int16>)
+(<void> gui_spartan_rank_show <short>)
 show toast for rank upgrade (1..36)
 NETWORK SAFE: No
 
@@ -4750,35 +4750,35 @@ NETWORK SAFE: Unknown, assumed unsafe
 clears the mission objectives.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> objectives_show_up_to <int32>)
+(<void> objectives_show_up_to <long>)
 show primary campaign objectives 0..n
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> objectives_finish_up_to <int32>)
+(<void> objectives_finish_up_to <long>)
 mark primary campaign objectives 0..n as complete
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> objectives_show <int32>)
+(<void> objectives_show <long>)
 show secondary campaign objective N
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> objectives_finish <int32>)
+(<void> objectives_finish <long>)
 mark secondary campaign objective N as complete
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> objectives_unavailable <int32>)
+(<void> objectives_unavailable <long>)
 mark secondary campaign objective N as unavailable
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> objectives_secondary_show <int32>)
+(<void> objectives_secondary_show <long>)
 show secondary campaign objective N
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> objectives_secondary_finish <int32>)
+(<void> objectives_secondary_finish <long>)
 mark secondary campaign objective N as complete
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> objectives_secondary_unavailable <int32>)
+(<void> objectives_secondary_unavailable <long>)
 mark secondary campaign objective N as unavailable
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4822,27 +4822,27 @@ NETWORK SAFE: Unknown, assumed unsafe
 clear all network quality statistics
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> net_quality_set_connection_badness_history <boolean> <int16>)
+(<void> net_quality_set_connection_badness_history <boolean> <short>)
 set connection history, true/false, # of bits to set
 NETWORK SAFE: Yes
 
-(<void> net_quality_set_squad_host_badness_history <boolean> <int16>)
+(<void> net_quality_set_squad_host_badness_history <boolean> <short>)
 set host badness history, true/false, # of bits to set
 NETWORK SAFE: Yes
 
-(<void> net_quality_set_squad_client_badness_history <boolean> <int16>)
+(<void> net_quality_set_squad_client_badness_history <boolean> <short>)
 set client badness history, true/false, # of bits to set
 NETWORK SAFE: Yes
 
-(<void> net_quality_set_group_host_badness_history <boolean> <int16>)
+(<void> net_quality_set_group_host_badness_history <boolean> <short>)
 set host badness history, true/false, # of bits to set
 NETWORK SAFE: Yes
 
-(<void> net_quality_set_group_client_badness_history <boolean> <int16>)
+(<void> net_quality_set_group_client_badness_history <boolean> <short>)
 set client badness history, true/false, # of bits to set
 NETWORK SAFE: Yes
 
-(<void> net_quality_set_estimated_bandwidth <boolean> <int32>)
+(<void> net_quality_set_estimated_bandwidth <boolean> <long>)
 set upstream bandwidth history, <is reliable> <bandwidth in kbps>
 NETWORK SAFE: Yes
 
@@ -4862,15 +4862,15 @@ NETWORK SAFE: Yes
 join a squad session by sessionid, 'none' to cancel a previous join
 NETWORK SAFE: Yes
 
-(<void> net_enable_join_friend_loop <int32>)
+(<void> net_enable_join_friend_loop <long>)
 randomly join a friend every <param> seconds, 0 to reset
 NETWORK SAFE: Yes
 
-(<void> net_set_maximum_player_count <int32>)
+(<void> net_set_maximum_player_count <long>)
 sets the maximum player count for this squad
 NETWORK SAFE: Yes
 
-(<void> net_set_campaign_insertion_point <int16>)
+(<void> net_set_campaign_insertion_point <short>)
 sets the campaign insertion point for this squad
 NETWORK SAFE: Yes
 
@@ -4898,7 +4898,7 @@ NETWORK SAFE: Yes
 network test: deletes all channels
 NETWORK SAFE: Yes
 
-(<void> net_test_delegate_host <int32>)
+(<void> net_test_delegate_host <long>)
 network test: delegate host to the specified player
 NETWORK SAFE: Yes
 
@@ -4910,7 +4910,7 @@ NETWORK SAFE: Yes
 network test: sets the name of the scenario to play
 NETWORK SAFE: Yes
 
-(<void> net_test_campaign_difficulty <int16>)
+(<void> net_test_campaign_difficulty <short>)
 network test: sets the difficulty of the campaign game to play
 NETWORK SAFE: Yes
 
@@ -4982,7 +4982,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 um...
 NETWORK SAFE: safe
 
-(<void> play_bink_movie_from_tag <bink_definition>)
+(<void> play_bink_movie_from_tag <bink definition>)
 play a bink movie from a tag
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -4990,19 +4990,19 @@ NETWORK SAFE: Unknown, assumed unsafe
 plays credits movie, pressing any button will stop credits and launch main menu
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> bink_time)
+(<long> bink_time)
 uh...
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> set_global_doppler_factor <real32>)
+(<void> set_global_doppler_factor <real>)
 new doppler factor: <real>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> set_global_mixbin_headroom <int32> <int32>)
+(<void> set_global_mixbin_headroom <long> <long>)
 blah
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> debug_sound_environment_source_parameter <int32> <real32>)
+(<void> debug_sound_environment_source_parameter <long> <real>)
 blah
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5041,11 +5041,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> unknown4F4 <string>)
 
 
-(<void> test_memory_allocators <int32> <int16> <int16> <int16> <int32>)
+(<void> test_memory_allocators <long> <short> <short> <short> <long>)
 performs tests on different memory allocators and saves the results
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_memory_allocators <int32> <int16> <int16> <int16> <int32> <string>)
+(<void> test_memory_allocators <long> <short> <short> <short> <long> <string>)
 performs tests on different memory allocators and saves the results
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5065,11 +5065,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 prints the signed in users' xuids as automation events.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_show_are_users_friends <int32> <string>)
+(<void> test_show_are_users_friends <long> <string>)
 prints whether the current controller and specified xuid are friends as automation events
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_invite_friend <int32> <string>)
+(<void> test_invite_friend <long> <string>)
 shows the guide send friend invite ui from the current controller to the specified xuid
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5077,39 +5077,39 @@ NETWORK SAFE: Unknown, assumed unsafe
 get the current squad session id
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_auto_get_screens <int32>)
+(<void> test_auto_get_screens <long>)
 <arbitrary int> list the current gui screens
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_auto_get_screen_widgets <int32> <int32>)
+(<void> test_auto_get_screen_widgets <long> <long>)
 <arbitrary int> <screen index> lists widgets in a screen
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_auto_screen_get_datasources <int32> <int32>)
+(<void> test_auto_screen_get_datasources <long> <long>)
 <arbitrary int> <screen index> lists screen datasources
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_auto_screen_get_data_columns <int32> <int32> <string_id>)
+(<void> test_auto_screen_get_data_columns <long> <long> <string_id>)
 <arbitrary int> <screen index> <datasource string id> lists columns that make up this datasource
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_auto_screen_get_data <int32> <int32> <string_id> <string_id>)
+(<void> test_auto_screen_get_data <long> <long> <string_id> <string_id>)
 <arbitrary int> <screen index> <datasource string id> <datasource column string id> lists data from a datasource
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_auto_screen_invoke_list_item_by_name <int32> <int32> <string_id> <string_id> <string_id>)
+(<void> test_auto_screen_invoke_list_item_by_name <long> <long> <string_id> <string_id> <string_id>)
 <arbitrary int> <screen index> <list string id> <datasource column string id> <column value string id> triggers the list item who's column's value matches the specified one
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_auto_screen_invoke_list_item_by_text <int32> <int32> <string_id> <string_id> <string>)
+(<void> test_auto_screen_invoke_list_item_by_text <long> <long> <string_id> <string_id> <string>)
 <arbitrary int> <screen index> <list string id> <datasource column string id> <column value string id> triggers the list item who's column's value matches the specified one
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_auto_screen_invoke_list_item_by_handle <int32> <int32> <string_id> <int32>)
+(<void> test_auto_screen_invoke_list_item_by_handle <long> <long> <string_id> <long>)
 <arbitrary int> <screen index> <list string id> <element handle> triggers the list item specified by the element handle
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_auto_screen_send_button_press <int32> <int32> <string>)
+(<void> test_auto_screen_send_button_press <long> <long> <string>)
 <arbitrary int> <screen index> <button name> sends the button press to the screen
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5133,7 +5133,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 <filename> load roster into memory.  the format may change build to build causing this to fail or weird results to come up.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> test_fragment_utility_drive <int32> <int32> <int32>)
+(<void> test_fragment_utility_drive <long> <long> <long>)
 <file_count> <growth_repetitions> <growth_size> writes files of varying sizes to the utiltiy drive in an effort to fragment it really badly
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5157,11 +5157,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 tell the upload queue to start up again after a failure
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> online_files_upload <string> <int32>)
+(<void> online_files_upload <string> <long>)
 <filename> <slot_index> enqueues the specified filename for upload
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> online_files_throttle_bandwidth <int32>)
+(<void> online_files_throttle_bandwidth <long>)
 <bytes per second> sets the maximum bandwidth that online_files can use
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5185,7 +5185,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 submits a test campaign blob to webstats
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> webstats_throttle_bandwidth <int32>)
+(<void> webstats_throttle_bandwidth <long>)
 <bytes per second> sets the maximum bandwidth that webstats can use
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5221,27 +5221,27 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns list of child objects by definition.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> voice_set_outgoing_channel_count <int32> <int32>)
+(<void> voice_set_outgoing_channel_count <long> <long>)
 sets the outgoing channel count <in-game> <out-of-game>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> voice_set_voice_repeater_peer_index <int32>)
+(<void> voice_set_voice_repeater_peer_index <long>)
 sets the repeater peer index
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> voice_set_mute <int32> <int32> <boolean>)
+(<void> voice_set_mute <long> <long> <boolean>)
 mute a player
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> net_leaderboard_clear_hopper <int32>)
+(<void> net_leaderboard_clear_hopper <long>)
 <user index> clears the hopper stats for the user
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> net_leaderboard_clear_global_arbitrated <int32>)
+(<void> net_leaderboard_clear_global_arbitrated <long>)
 <user index> clears the global arbitrated stats for the user
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> net_leaderboard_clear_global_unarbitrated <int32>)
+(<void> net_leaderboard_clear_global_unarbitrated <long>)
 <user index> clears the global unarbitrated stats for the user
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5253,19 +5253,19 @@ NETWORK SAFE: Unknown, assumed unsafe
 dump a list of open tags to <map_name>_tags.txt
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> interpolator_start <string_id> <real32> <real32>)
+(<long> interpolator_start <string_id> <real> <real>)
 <name> <final value> <time>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> interpolator_start_smooth <string_id> <real32> <real32>)
+(<long> interpolator_start_smooth <string_id> <real> <real>)
 <name> <final value> <time>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> interpolator_stop <string_id>)
+(<long> interpolator_stop <string_id>)
 <name>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> interpolator_restart <string_id>)
+(<long> interpolator_restart <string_id>)
 <name>
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5277,51 +5277,51 @@ NETWORK SAFE: Unknown, assumed unsafe
 <name>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> interpolator_set_current_value <string_id> <real32>)
+(<long> interpolator_set_current_value <string_id> <real>)
 <name> <current value>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_get_current_value <string_id> <boolean>)
+(<real> interpolator_get_current_value <string_id> <boolean>)
 <name> <use function ON/OFF>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_get_start_value <string_id> <boolean>)
+(<real> interpolator_get_start_value <string_id> <boolean>)
 <name> <use function ON/OFF>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_get_final_value <string_id> <boolean>)
+(<real> interpolator_get_final_value <string_id> <boolean>)
 <name> <use function ON/OFF>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_get_current_phase <string_id>)
+(<real> interpolator_get_current_phase <string_id>)
 <name>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_get_current_time_fraction <string_id>)
+(<real> interpolator_get_current_time_fraction <string_id>)
 <name>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_get_start_time <string_id>)
+(<real> interpolator_get_start_time <string_id>)
 <name>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_get_final_time <string_id>)
+(<real> interpolator_get_final_time <string_id>)
 <name>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_evaluate_at <string_id> <real32> <boolean>)
+(<real> interpolator_evaluate_at <string_id> <real> <boolean>)
 <name> <value in> <use function ON/OFF>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_evaluate_at_time_fraction <string_id> <real32> <boolean>)
+(<real> interpolator_evaluate_at_time_fraction <string_id> <real> <boolean>)
 <name> <time fraction in> <use function ON/OFF>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_evaluate_at_time <string_id> <real32> <boolean>)
+(<real> interpolator_evaluate_at_time <string_id> <real> <boolean>)
 <name> <time in> <use function ON/OFF>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> interpolator_evaluate_at_time_delta <string_id> <real32> <boolean>)
+(<real> interpolator_evaluate_at_time_delta <string_id> <real> <boolean>)
 <name> <time delta> <use function ON/OFF>
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5357,7 +5357,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> set_global_sound_environment <real32> <real32> <real32> <real32> <int32> <real32>)
+(<void> set_global_sound_environment <real> <real> <real> <real> <long> <real>)
 this is your brain on drugs
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5385,23 +5385,23 @@ NETWORK SAFE: Unknown, assumed unsafe
 reset
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> rasterizer_bloom_override_blur_amount <real32>)
+(<void> rasterizer_bloom_override_blur_amount <real>)
 blur mount
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> rasterizer_bloom_override_threshold <real32>)
+(<void> rasterizer_bloom_override_threshold <real>)
 threshold
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> rasterizer_bloom_override_brightness <real32>)
+(<void> rasterizer_bloom_override_brightness <real>)
 brightness
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> rasterizer_bloom_override_box_factor <real32>)
+(<void> rasterizer_bloom_override_box_factor <real>)
 box factor
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> rasterizer_bloom_override_max_factor <real32>)
+(<void> rasterizer_bloom_override_max_factor <real>)
 max factor
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5417,11 +5417,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 high res
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> rasterizer_bloom_override_brightness_alpha <real32>)
+(<void> rasterizer_bloom_override_brightness_alpha <real>)
 brightness alpha
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> rasterizer_bloom_override_max_factor_alpha <real32>)
+(<void> rasterizer_bloom_override_max_factor_alpha <real>)
 max factor alpha
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5437,27 +5437,27 @@ NETWORK SAFE: Unknown, assumed unsafe
 toggle autoexposure
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_exposure_full <real32> <real32> <real32> <real32> <real32>)
+(<void> render_exposure_full <real> <real> <real> <real> <real>)
 animate exposure from <initial> to <final> stops using <initial> to <final> opacity in <seconds>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_exposure_fade_in <real32> <real32>)
+(<void> render_exposure_fade_in <real> <real>)
 fade to animated exposure <stops> in <seconds>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_exposure_fade_out <real32>)
+(<void> render_exposure_fade_out <real>)
 fade to default exposure settings in <seconds>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_exposure <real32> <real32>)
+(<void> render_exposure <real> <real>)
 fade to animated exposure <stops> in <seconds>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_autoexposure_instant <int32>)
+(<void> render_autoexposure_instant <long>)
 instantly adopt auto exposure values in the next N frames
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_exposure_set_environment_darken <real32>)
+(<void> render_exposure_set_environment_darken <real>)
 set environmental darkening
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5465,15 +5465,15 @@ NETWORK SAFE: Unknown, assumed unsafe
 turns depth of field on and off
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_depth_of_field <real32> <real32> <real32> <real32>)
+(<void> render_depth_of_field <real> <real> <real> <real>)
 animate depth of field, in focus from <near> to <far>, with depth of field <depth>, in <ticks>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_dof_focus_depth <real32>)
+(<void> render_dof_focus_depth <real>)
 interpolate depth of field to <depth>
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> render_dof_blur_animate <real32> <real32>)
+(<void> render_dof_blur_animate <real> <real>)
 interpolate depth of field maximum blur to <blur> in <ticks>
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5497,7 +5497,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 given a team index, returns an object list containing all living player objects belonging to that team
 NETWORK SAFE: Yes
 
-(<int32> mp_active_player_count_by_team <mp_team>)
+(<long> mp_active_player_count_by_team <mp_team>)
 given a team index, returns an object list containing all living player objects belonging to that team
 NETWORK SAFE: Yes
 
@@ -5525,7 +5525,7 @@ NETWORK SAFE: Yes
 used to determine if the mp game is in the active-round phase or not
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> give_medal <int16>)
+(<void> give_medal <short>)
 awards a medal (0..58) to pad 1 due to pad 2 (if they're there)
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5537,7 +5537,7 @@ NETWORK SAFE: Yes
 places the given number of members of the specified squad as non-authoritative objects
 NETWORK SAFE: Yes
 
-(<void> mp_ai_place <ai> <int16>)
+(<void> mp_ai_place <ai> <short>)
 places the given number of members of the specified squad as non-authoritative objects
 NETWORK SAFE: Yes
 
@@ -5585,11 +5585,11 @@ NETWORK SAFE: No
 dumps the current candy monitor state to a file on disk
 NETWORK SFE: Unknown, assumed unsafe
 
-(<void> set_camera_third_person <int32> <boolean>)
+(<void> set_camera_third_person <long> <boolean>)
 <user_index> <third_person (yes/no)> sets user's camera perspective
 NETWORK SAFE: No
 
-(<boolean> get_camera_third_person <int32>)
+(<boolean> get_camera_third_person <long>)
 <user_index> gets user's camera perspective
 NETWORK SAFE: No
 
@@ -5597,7 +5597,7 @@ NETWORK SAFE: No
 enable/disable determinism logging
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> determinism_debug_manager_set_trace_flags <int32>)
+(<void> determinism_debug_manager_set_trace_flags <long>)
 set which determinism debugging traces should be turned on
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5609,7 +5609,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 enable determinism tracing
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> determinism_debug_manager_set_consumer_sample_level <string> <int32>)
+(<void> determinism_debug_manager_set_consumer_sample_level <string> <long>)
 sets sample level for a consumer
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5644,7 +5644,7 @@ NETWORK SAFE: Unkown, assumed unsafe
 Toggle recording of replay in single player game
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<boolean> mover_set_program <object> <int16>)
+(<boolean> mover_set_program <object> <short>)
 Set the motor program of the given mover object
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5680,7 +5680,7 @@ NETWORK SAFE: No
 um2...
 NETWORK SAFE: Yes
 
-(<void> predict_bink_movie_from_tag <bink_definition>)
+(<void> predict_bink_movie_from_tag <bink definition>)
 um2...
 NETWORK SAFE: Yes
 
@@ -5688,19 +5688,19 @@ NETWORK SAFE: Yes
 dump profile history.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> camera_set_mode <int32> <int32>)
+(<void> camera_set_mode <long> <long>)
 <user_index> <mode_index> sets user's camera perspective
 NETWORK SAFE: No
 
-(<void> camera_set_flying_cam_at_point <int32> <cutscene_camera_point>)
+(<void> camera_set_flying_cam_at_point <long> <cutscene_camera_point>)
 <user_index> <camera_point> sets a flying camera perspective
 NETWORK SAFE: No
 
-(<void> camera_set_target <int32> <object>)
+(<void> camera_set_target <long> <object>)
 <user_index> <object_index> sets the current camera's target
 NETWORK SAFE: No
 
-(<int32> game_coop_player_count)
+(<long> game_coop_player_count)
 returns the number of coop players active in game
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5712,7 +5712,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 dump profile stats to telnet console.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> string_id_name <int32>)
+(<void> string_id_name <long>)
 prints the name of the string id to the console
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5720,7 +5720,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 prints any hs command matching the string passed in
 NETWORK SAFE: of course you idiot
 
-(<void> add_recycling_volume <trigger_volume> <int32> <int32>)
+(<void> add_recycling_volume <trigger_volume> <long> <long>)
 removes garbage in specified trigger volume to a max count over n seconds
 NETWORK SAFE: Yes
 
@@ -5751,7 +5751,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 dumps active status_lines to system_log.txt
 NETWORK SAFE: I hope so
 
-(<int32> game_tick_get)
+(<long> game_tick_get)
 returns current game tick
 NETWORK SAFE: only if game_time_get is
 
@@ -5783,7 +5783,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 deactivates profile sections based on a substring.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> net_game_set_player_standing <string> <int32>)
+(<void> net_game_set_player_standing <string> <long>)
 set's a player's standing by gamertag
 NETWORK SAFE: host only
 
@@ -5799,14 +5799,14 @@ NETWORK SAFE: just assume it isn't
 prints games for the current hopper
 NETWORK SAFE: just assume it isn't
 
-(<void> net_test_matchmaking_hopper_set_game <int32>)
+(<void> net_test_matchmaking_hopper_set_game <long>)
 sets the game vairant for the current hopper
 NETWORK SAFE: just assume it isn't
 
-(<void> saved_film_set_playback_game_speed <real32>)
+(<void> saved_film_set_playback_game_speed <real>)
 set the saved film playback speed
 
-(<void> saved_film_set_pending_playback_game_speed <real32>)
+(<void> saved_film_set_pending_playback_game_speed <real>)
 set the pending saved film playback speed
 
 (<void> noguchis_mystery_tour <string>)
@@ -5832,10 +5832,10 @@ NETWORK SAFE: Unknown, assumed unsafe
 sets/unsets the object always active flag to ignore pvs changes
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> saved_film_seek_to_film_tick <int32>)
+(<void> saved_film_seek_to_film_tick <long>)
 seeks to a film tick
 
-(<boolean> tag_is_active <any_tag_not_resolving>)
+(<boolean> tag_is_active <any tag not resolving>)
 returns true/false if you can create this tag with the active zones
 NETWORK SAFE: only if the global zone state is network safe
 
@@ -5866,11 +5866,11 @@ NETWORK SAFE: probably not
 disconnects the group session
 NETWORK SAFE: probably not
 
-(<void> net_test_clear_squad_session_parameter <int32>)
+(<void> net_test_clear_squad_session_parameter <long>)
 clears a squad session parameter
 NETWORK SAFE: probably not
 
-(<void> net_test_clear_group_session_parameter <int32>)
+(<void> net_test_clear_group_session_parameter <long>)
 clears a group session parameter
 NETWORK SAFE: probably not
 
@@ -5914,7 +5914,7 @@ Remove an event category from being watched in the output window.
 (<void> output_window_list_categories)
 List all the event categories being watched in the output window.
 
-(<void> decorators_split <int32> <real32>)
+(<void> decorators_split <long> <real>)
 duplicates decorator set <index> and moves <percentage> of the decorators into it
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5934,7 +5934,7 @@ NETWORK SAFE: lol
 sets cheat flags
 NETWORK SAFE: yes
 
-(<void> net_banhammer_set_controller_ban_flags <controller> <string> <int32> <boolean>)
+(<void> net_banhammer_set_controller_ban_flags <controller> <string> <long> <boolean>)
 sets ban flags
 NETWORK SAFE: yes
 
@@ -5946,11 +5946,11 @@ NETWORK SAFE: yes
 display repeated play lists
 NETWORK SAFE: yes
 
-(<void> net_leaderboard_set_user_stats <int32> <real32> <real32> <int32> <int32> <int32>)
+(<void> net_leaderboard_set_user_stats <long> <real> <real> <long> <long> <long>)
 slams user leaderboard values locally
 NETWORK SAFE: no
 
-(<void> net_leaderboard_set_user_game_stats <int32> <int32> <int32> <int32> <int32>)
+(<void> net_leaderboard_set_user_game_stats <long> <long> <long> <long> <long>)
 slams more user stats
 NETWORK SAFE: no
 
@@ -5962,11 +5962,11 @@ NETWORK SAFE: Yes
 verifies the contents of a packed map variant file
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> async_set_work_delay_milliseconds <int32>)
+(<void> async_set_work_delay_milliseconds <long>)
 set an artificial delay time for the performance of any asynchronous task work
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_looping_start_with_effect <looping_sound> <object> <real32> <string_id>)
+(<void> sound_looping_start_with_effect <looping_sound> <object> <real> <string_id>)
 plays a looping sound from the specified source object (or "none"), with the specified scale and playback effect.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -5974,31 +5974,31 @@ NETWORK SAFE: Unknown, assumed unsafe
 turns on/off demand throttling based on io
 NETWORK SAFE: If not, Ooops
 
-(<void> set_performance_throttle <string> <int32> <real32>)
+(<void> set_performance_throttle <string> <long> <real>)
 sets a default value for a performance throttle for a given number of players
 
-(<void> global_preferences_quality_set_all <int32>)
+(<void> global_preferences_quality_set_all <long>)
 
 
-(<real32> get_performance_throttle <string> <int32>)
+(<real> get_performance_throttle <string> <long>)
 gets the value of a performance throttle for a given number of players
 
-(<void> unknown5E4 <real32>)
+(<void> unknown5E4 <real>)
 
 
-(<void> cinematic_zone_activate <int32>)
+(<void> cinematic_zone_activate <long>)
 activates scenario cinematic zone (automatically generated script function!)
 
-(<void> cinematic_zone_deactivate <int32>)
+(<void> cinematic_zone_deactivate <long>)
 deactivates scenario cinematic zone (automatically generated script function!)
 
-(<void> cinematic_zone_activate_from_editor <any_tag>)
+(<void> cinematic_zone_activate_from_editor <any tag>)
 activates cinematic zone from tag (automatically generated script function!)
 
-(<void> cinematic_zone_deactivate_from_editor <any_tag>)
+(<void> cinematic_zone_deactivate_from_editor <any tag>)
 deactivates cinematic zone from tag (automatically generated script function!)
 
-(<int32> tiling_current)
+(<long> tiling_current)
 returns the actual tiling configuration (could have been overridden from the requested configuration)
 
 (<void> unit_limit_lipsync_to_mouth_only <unit> <boolean>)
@@ -6008,7 +6008,7 @@ NETWORK SAFE: No
 (<void> dump_active_zone_tags)
 blah
 
-(<void> calculate_tag_prediction <any_tag>)
+(<void> calculate_tag_prediction <any tag>)
 
 
 (<void> tag_resources_enable_fast_prediction <boolean>)
@@ -6031,31 +6031,31 @@ NETWORK SAFE: Unknown, assumed unsafe
 prepare for switch to zone set
 NETWORK SAFE: Yes
 
-(<void> cinematic_zone_activate_for_debugging <int32>)
+(<void> cinematic_zone_activate_for_debugging <long>)
 activates scenario cinematic zone for debugging (automatically generated script function!)
 
 (<void> unit_play_random_ping <unit>)
 plays a random ping on the unit
 
-(<void> player_control_fade_out_all_input <real32>)
+(<void> player_control_fade_out_all_input <real>)
 fade out all play control over x seconds
 
-(<void> player_control_fade_in_all_input <real32>)
+(<void> player_control_fade_in_all_input <real>)
 fade in all play control over x seconds
 
-(<void> unit_control_fade_out_all_input <unit> <real32>)
+(<void> unit_control_fade_out_all_input <unit> <real>)
 fade out all play control for player over x seconds
 
-(<void> unit_control_fade_in_all_input <unit> <real32>)
+(<void> unit_control_fade_in_all_input <unit> <real>)
 fade in all play control for player over x seconds
 
-(<void> player_control_lock_gaze <unit> <point_reference> <real32>)
+(<void> player_control_lock_gaze <unit> <point_reference> <real>)
 player turn to face point with max velocity degrees/second
 
 (<void> player_control_unlock_gaze <unit>)
 unlock player from any gaze point
 
-(<void> player_control_scale_all_input <real32> <real32>)
+(<void> player_control_scale_all_input <real> <real>)
 scale input to x strength over y seconds
 
 (<void> run_like_dvd)
@@ -6068,29 +6068,29 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> run_no_hdd)
 
 
-(<bink_definition> cinematic_tag_reference_get_bink <int32>)
+(<bink definition> cinematic_tag_reference_get_bink <long>)
 Retrieve the bink tag from the cinematic system
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> voice_set_force_match_configurations <int32> <int32> <int32> <boolean>)
+(<void> voice_set_force_match_configurations <long> <long> <long> <boolean>)
 sets matchmaking voice options
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> voice_set_force_hud <int32> <int32>)
+(<void> voice_set_force_hud <long> <long>)
 sets matchmaking voice hud
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> object_set_custom_animation_speed <object> <real32>)
+(<void> object_set_custom_animation_speed <object> <real>)
 if the object is playing a custom animation, scale it to n playback speed
 
-(<void> scenery_animation_start_at_frame_loop <scenery> <animation_graph> <string_id> <int16>)
+(<void> scenery_animation_start_at_frame_loop <scenery> <animation_graph> <string_id> <short>)
 starts a custom animation playing on a piece of scenery at a specific frame and then loops
 NETWORK SAFE: Unknown, assumed unsafe
 
 (<void> saved_film_set_repro_mode <boolean>)
 set the saved film into repro mode (splitscreen users are created based on the number of splitscreen players that recorded the film)
 
-(<cinematic_scene_definition> cortana_tag_reference_get_scene <int32>)
+(<cinematic scene definition> cortana_tag_reference_get_scene <long>)
 Retrieve a cinematic tag from the cinematic system
 NETWORKING SAFE: Unknown, assumed unsafe
 
@@ -6128,7 +6128,7 @@ return the primary weapon of the specified unit
 (<void> dump_cortana_script)
 dump the cinematic script to cinematic_dump_cortana.txt
 
-(<animation_graph> budget_resource_get_animation_graph <animation_budget_reference>)
+(<animation_graph> budget_resource_get_animation_graph <animation budget reference>)
 Get a non resolving reference to a model animation graph budget reference
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6136,7 +6136,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 causes the player to successfully finish the current level and move to the next
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<looping_sound> budget_resource_get_looping_sound <looping_sound_budget_reference>)
+(<looping_sound> budget_resource_get_looping_sound <looping sound budget reference>)
 Get a non resolving reference to a looping sound budget reference
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6172,11 +6172,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 set the AI to not do any vector avoidance when flying
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_clean_up <int32>)
+(<void> cinematic_scripting_clean_up <long>)
 Unload the scenario cinematic zone
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> ai_erase_inactive <ai> <int16>)
+(<void> ai_erase_inactive <ai> <short>)
 Erase inactive actors in the given ai index, and any of those actors who become inactive within the next designated ticks
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6192,11 +6192,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 plays credits movie, no button press detection (you can still use cinematic skipping around this)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<sound> budget_resource_get_sound <sound_budget_reference>)
+(<sound> budget_resource_get_sound <sound budget reference>)
 Get a non resolving reference to a looping sound budget reference
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> controller_set_single_player_level_unlocked <controller> <int16> <boolean>)
+(<void> controller_set_single_player_level_unlocked <controller> <short> <boolean>)
 <controller> <level index> <bool locked> set single player level locked state for specified controller
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6210,18 +6210,18 @@ resource validation every main_loop_body call
 Puts all cinematic playback into debug mode (automatically generated script function!)
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<object> cinematic_scripting_get_object <int32> <int32> <int32>)
+(<object> cinematic_scripting_get_object <long> <long> <long>)
 Get an object used in a cinematic
 NETWORK SAFE: Unknown, assumed unsafe
 
 (<void> dummy_function)
 Function that does nothing.
 
-(<int32> gp_integer_get <string_id>)
+(<long> gp_integer_get <string_id>)
 get a game progression integer variable
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> gp_integer_set <string_id> <int32>)
+(<void> gp_integer_set <string_id> <long>)
 set a game progression integer variable
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6253,11 +6253,11 @@ NETWORK SAFE: Unknown, assumed unsafe
 debugging command that commits game options to game options so they will persist after a map reset
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_start_screen_effect <int32> <int32> <int32> <int32>)
+(<void> cinematic_scripting_start_screen_effect <long> <long> <long> <long>)
 Play the associated area screen effect.
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> cinematic_scripting_stop_screen_effect <int32> <int32> <int32> <int32>)
+(<void> cinematic_scripting_stop_screen_effect <long> <long> <long> <long>)
 Stop the associated area screen effect.
 NETWORKING SAFE: Unknown, assumed unsafe
 
@@ -6269,11 +6269,11 @@ NETWORK SAFE: safe-ish in deterministic networking as long as it is not invoked 
 prepare to transition game to another level
 NETWORK SAFE: safe-ish in deterministic networking as long as it is not invoked from the console
 
-(<void> game_start_with_network_session <int32> <int32> <string>)
+(<void> game_start_with_network_session <long> <long> <string>)
 <campaign id> <map id> <scenario> debug map launching: starts a game on the specified map with campaign_id and map_id.
 NETWORK SAFE: No, for init.txt only
 
-(<void> levels_add_campaign_map_with_id <int32> <string>)
+(<void> levels_add_campaign_map_with_id <long> <string>)
 <map id> <scenario> add scenario to levels array
 NETWORK SAFE: No, for init.txt only
 
@@ -6281,19 +6281,19 @@ NETWORK SAFE: No, for init.txt only
 <scenario> add a single scenario to levels array
 NETWORK SAFE: No, for init.txt only
 
-(<void> sound_impulse_start_editor <sound> <object> <real32>)
+(<void> sound_impulse_start_editor <sound> <object> <real>)
 plays an impulse sound from the specified source object (or "none"), with the specified scale.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_impulse_start_effect_editor <sound> <object> <real32> <string_id>)
+(<void> sound_impulse_start_effect_editor <sound> <object> <real> <string_id>)
 plays an impulse sound from the specified source object (or "none"), with the specified scale and effect.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_impulse_start_3d_editor <sound> <real32> <real32>)
+(<void> sound_impulse_start_3d_editor <sound> <real> <real>)
 <sound> <azimuth> <scale> at the sound's minimum distance
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> sound_looping_start_editor <looping_sound> <object> <real32>)
+(<void> sound_looping_start_editor <looping_sound> <object> <real>)
 plays a looping sound from the specified source object (or "none"), with the specified scale.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6309,17 +6309,17 @@ NETWORK SAFE: doesn't affect global state, but does kick-off I/O
 stops the sound channel debugger log
 NETWORK SAFE: doesn't affect global state, but does kick-off I/O
 
-(<void> cinematic_scripting_set_user_input_constraints <int32> <int32> <int32> <int32>)
+(<void> cinematic_scripting_set_user_input_constraints <long> <long> <long> <long>)
 Set the user input constraints for a cinematic.
 NETWORKING SAFE: Unknown, assumed unsafe
 
-(<void> is_skull_primary_enable <primary_skull> <boolean>)
+(<void> is_skull_primary_enable <primary skull> <boolean>)
 
 
-(<void> is_skull_secondary_enable <secondary_skull> <boolean>)
+(<void> is_skull_secondary_enable <secondary skull> <boolean>)
 
 
-(<void> controller_set_popup_message_index <controller> <int32>)
+(<void> controller_set_popup_message_index <controller> <long>)
 <controller> <message index> set the highest popup message that the player has accepted
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6327,7 +6327,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 <controller> <vidmaster_seen> set whether the player has accepted the vidmaster popup
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> gui_enter_lobby <int32>)
+(<void> gui_enter_lobby <long>)
 <lobby index> index 0-4
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6335,62 +6335,62 @@ NETWORK SAFE: Unknown, assumed unsafe
 respawns all dead players even if no lives are left
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> survival_mode_lives_get)
+(<long> survival_mode_lives_get)
 get the number of lives left in survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> survival_mode_lives_set <int32>)
+(<void> survival_mode_lives_set <long>)
 set the number of lives left in survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> survival_mode_set_get)
+(<short> survival_mode_set_get)
 get the current set index for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> survival_mode_set_set <int16>)
+(<void> survival_mode_set_set <short>)
 set the current set index for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> survival_mode_round_get)
+(<short> survival_mode_round_get)
 get the current round index for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> survival_mode_round_set <int16>)
+(<void> survival_mode_round_set <short>)
 set the current round index for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int16> survival_mode_wave_get)
+(<short> survival_mode_wave_get)
 get the current wave index for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> survival_mode_wave_set <int16>)
+(<void> survival_mode_wave_set <short>)
 set the current wave index for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> survival_mode_set_multiplier_get)
+(<real> survival_mode_set_multiplier_get)
 get the current wave index for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> survival_mode_set_multiplier_set <real32>)
+(<void> survival_mode_set_multiplier_set <real>)
 set the current wave index for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<real32> survival_mode_bonus_multiplier_get)
+(<real> survival_mode_bonus_multiplier_get)
 get the current wave index for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> survival_mode_bonus_multiplier_set <real32>)
+(<void> survival_mode_bonus_multiplier_set <real>)
 set the current wave index for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> debug_sound_channel_fadeout_time <real32>)
+(<void> debug_sound_channel_fadeout_time <real>)
 set fadeout time for sound channel debugger
 
-(<void> survival_mode_set_rounds_per_set <int16>)
+(<void> survival_mode_set_rounds_per_set <short>)
 set the number of rounds in each set for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> survival_mode_set_waves_per_round <int16>)
+(<void> survival_mode_set_waves_per_round <short>)
 set the number of waves in each round for survival mode
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6417,7 +6417,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 lets the engine award the hero medal
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> campaign_metagame_get_player_score <unit>)
+(<long> campaign_metagame_get_player_score <unit>)
 Calculates the score for an individual player
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6432,7 +6432,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> player_set_look_training_hack <unit> <boolean>)
 enables or disables the look training hack.  This allows players to touch devices when in a vehicle, but not exit the vehicle or do anything else.
 
-(<boolean> device_arg_has_been_touched_by_unit <device> <unit> <int32>)
+(<boolean> device_arg_has_been_touched_by_unit <device> <unit> <long>)
 Returns true if the unit has touched the device in the past X ticks.
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6458,11 +6458,11 @@ NETWORK SAFE: NO
 grants all vidmaster achievements to the indicated controller
 NETWORK SAFE: NO
 
-(<void> chud_fade_for_first_person_cinematic <real32> <int32>)
+(<void> chud_fade_for_first_person_cinematic <real> <long>)
 Fades all chud elements except for those marked as 'motion sensor'
 NETWORK SAFE: Yes
 
-(<void> achievement_post_chud_progression <unit> <string_id> <int32>)
+(<void> achievement_post_chud_progression <unit> <string_id> <long>)
 posts an achievement progression toast from script
 NETWORK SAFE: Yes
 
@@ -6470,17 +6470,17 @@ NETWORK SAFE: Yes
 Flag an object so that it renders in the everything else color
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> chud_show_navpoint <unit> <cutscene_flag> <real32> <boolean>)
+(<void> chud_show_navpoint <unit> <cutscene_flag> <real> <boolean>)
 Activate a scripted navpoint for a specific player
 NETWORK SAFE: Unknown, assumed unsafe
 
 (<void> run_like_package)
 
 
-(<void> clear_map_slot <int32>)
+(<void> clear_map_slot <long>)
 nuke cache<number>.map
 
-(<void> clear_map_type <int32>)
+(<void> clear_map_type <long>)
 nuke all maps corresponding to specified type. 0 = mainmenu, 1 = shared, 2 = campaign, 3 = hub, 4 = linear, 5 = scene, 6 = cinematic
 
 (<void> unit_confirm_message <unit>)
@@ -6495,7 +6495,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 Locks the accept button until the user presses accept
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<int32> player_get_kills_by_type <unit> <int32> <int32>)
+(<long> player_get_kills_by_type <unit> <long> <long>)
 Retrieves the number of kills a specific player has gotten by metagame type and class, ask an engineer for the mapping
 NETWORK SAFE: Unknown, assumed unsafe
 
@@ -6507,21 +6507,21 @@ NETWORK SAFE: Unknown, assumed unsafe
 clear the command buffer cache
 Yes
 
-(<void> sound_looping_resume <looping_sound> <object> <real32>)
+(<void> sound_looping_resume <looping_sound> <object> <real>)
 plays a looping sound from the specified source object (or "none"), with the specified scale.
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<void> chud_bonus_round_set_target_score <int32>)
+(<void> chud_bonus_round_set_target_score <long>)
 set the bonus round score target
 NETWORK SAFE: Unknown, assumed unsafe
 
 (<void> unknown673)
 
 
-(<void> unknown674 <int16> <int16> <boolean>)
+(<void> unknown674 <short> <short> <boolean>)
 
 
-(<void> unknown675 <int16> <int16> <int16> <boolean>)
+(<void> unknown675 <short> <short> <short> <boolean>)
 
 
 (<void> unknown676)
@@ -6545,13 +6545,13 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> unknown67C)
 
 
-(<int32> saber_ui_get_player_model_id)
+(<long> saber_ui_get_player_model_id)
 
 
-(<int32> saber_ui_get_music_id)
+(<long> saber_ui_get_music_id)
 
 
-(<void> unknown67F <int32> <int32>)
+(<void> unknown67F <long> <long>)
 
 
 (<void> unit_set_armor <object> <string_id> <string_id>)
@@ -6563,16 +6563,16 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> change_network_privacy_to_system_link)
 
 
-(<void> ssao_enable <int16>)
+(<void> ssao_enable <short>)
 
 
-(<void> ssao_radius <real32>)
+(<void> ssao_radius <real>)
 
 
-(<void> ssao_intensity <real32>)
+(<void> ssao_intensity <real>)
 
 
-(<void> ssao_sampleZThreshold <real32>)
+(<void> ssao_sampleZThreshold <real>)
 
 
 (<void> fxaa_enable <boolean>)
@@ -6584,7 +6584,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> lightshafts_enable <boolean>)
 
 
-(<void> unknown68A <int16> <string_id>)
+(<void> unknown68A <short> <string_id>)
 
 
 (<void> reflections_enable <boolean>)
@@ -6596,7 +6596,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> reflection_multisampling_enabled <boolean>)
 
 
-(<void> reflection_multisample_passes <int16>)
+(<void> reflection_multisample_passes <short>)
 
 
 (<void> reflection_fxaa_enable <boolean>)
@@ -6608,13 +6608,13 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> reflection_color_bilinear_filter_enable <boolean>)
 
 
-(<void> end_match_wait_time_increment <real32>)
+(<void> end_match_wait_time_increment <real>)
 
 
 (<void> unknown693)
 
 
-(<void> background_bitmap_set <int16>)
+(<void> background_bitmap_set <short>)
 
 
 (<void> local_player_earn_wp_event <string_id>)
@@ -6623,7 +6623,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> global_screen_effect_enable <boolean>)
 
 
-(<void> unknown697 <int32> <string> <string>)
+(<void> unknown697 <long> <string> <string>)
 
 
 (<void> unknown698)
@@ -6632,19 +6632,19 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> saber_mouse_inversion_get)
 
 
-(<int32> saber_mouse_inversion_set)
+(<long> saber_mouse_inversion_set)
 
 
-(<void> unknown69B <real32> <real32> <real32> <real32> <real32> <real32> <real32>)
+(<void> unknown69B <real> <real> <real> <real> <real> <real> <real>)
 
 
-(<void> unknown69C <int16> <int32>)
+(<void> unknown69C <short> <long>)
 
 
 (<void> unknown69D)
 
 
-(<void> unknown69E <int32> <real32> <real32> <real32>)
+(<void> unknown69E <long> <real> <real> <real>)
 
 
 (<void> unknown69F <boolean>)
