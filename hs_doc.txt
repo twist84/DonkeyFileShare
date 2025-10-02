@@ -43,7 +43,7 @@ returns the quotient of two expressions.
 NETWORK SAFE: Yes
 
 (<real> % <number> <number>)
-returns the remainder of two expressions
+returns the remainder of the division of two numbers
 NETWORK SAFE: Yes
 
 (<real> min <number(s))
@@ -466,7 +466,7 @@ Set whether the object can die from damage or not (as opposed to by scripting)
 NETWORK SAFE: Yes
 
 (<boolean> object_vitality_pinned <object>)
-returns TRUE if the object',27h,'s vitality is currently pinned at some minimum value because it cannot die.
+returns TRUE if the object's vitality is currently pinned at some minimum value because it cannot die.
 NETWORK SAFE: Yes
 
 (<void> garbage_collect_now)
@@ -6328,7 +6328,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 NETWORK SAFE: Unknown, assumed unsafe
 
 (<void> gui_enter_lobby <long>)
-<lobby index> index 0-4
+<lobby index> index 0-5
 NETWORK SAFE: Unknown, assumed unsafe
 
 (<void> survival_mode_respawn_dead_players)
@@ -6655,4 +6655,12 @@ NETWORK SAFE: Unknown, assumed unsafe
 
 (<void> exit_game)
 exits the game.
+
+(<void> load_preferences_from_file <string>)
+Loads preferences from the specified file
+NETWORK SAFE: Unknown, assumed unsafe
+
+(<void> load_customization_from_file <string>)
+Loads customization from the specified file
+NETWORK SAFE: Unknown, assumed unsafe
 
