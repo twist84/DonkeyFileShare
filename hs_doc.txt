@@ -4440,7 +4440,7 @@ NETWORK SAFE: Unknown, assumed unsafe
 returns TRUE if player0's look pitch is inverted
 NETWORK SAFE: Unknown, assumed unsafe
 
-(<long> controller_unlock_solo_levels <short>)
+(<long> user_interface_controller_get_last_level_played <short>)
 
 
 (<void> controller_set_look_inverted <controller> <boolean>)
@@ -6653,6 +6653,12 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> unknown6A0)
 
 
+(<void> debug_menu_rebuild)
+Reparses the debug menu from the text file.
+
+(<void> object_copy_player_appearance <object> <long>)
+copy appearance into object from player n (starts counting from 0)
+
 (<void> exit_game)
 exits the game.
 
@@ -6663,4 +6669,20 @@ NETWORK SAFE: Unknown, assumed unsafe
 (<void> load_customization_from_file <string>)
 Loads customization from the specified file
 NETWORK SAFE: Unknown, assumed unsafe
+
+(<void> lsp_info_get)
+gets the LSP server info
+NETWORK SAFE: Unknown, assumed unsafe
+
+(<void> lsp_info_set <string> <long>)
+<ip> <port> sets the LSP server address and port
+NETWORK SAFE: Unknown, assumed unsafe
+
+(<void> online_set_is_connected_to_live <boolean>)
+sets connected to live
+NETWORK SAFE: Yes
+
+(<void> online_user_set_name <long> <string>)
+sets the name of a specific user
+NETWORK SAFE: Yes
 
