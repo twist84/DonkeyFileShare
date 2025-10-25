@@ -4441,7 +4441,8 @@ returns TRUE if player0's look pitch is inverted
 NETWORK SAFE: Unknown, assumed unsafe
 
 (<long> user_interface_controller_get_last_level_played <short>)
-
+returns index of last completed solo level for profile index passed in
+NETWORK SAFE: No
 
 (<void> controller_set_look_inverted <controller> <boolean>)
 set look inversion for specified controller
@@ -6685,4 +6686,8 @@ NETWORK SAFE: Yes
 (<void> online_user_set_name <long> <string>)
 sets the name of a specific user
 NETWORK SAFE: Yes
+
+(<void> player_ragdoll)
+ragdolls the players biped.
+NETWORK SAFE: Unknown, assumed unsafe
 
