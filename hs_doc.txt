@@ -6691,3 +6691,127 @@ NETWORK SAFE: Yes
 ragdolls the players biped.
 NETWORK SAFE: Unknown, assumed unsafe
 
+(<void> antialiasing_set <boolean>)
+
+NETWORK SAFE: Yes
+
+(<void> camera_fov_set <real>)
+
+NETWORK SAFE: Yes
+
+(<void> controls_method_set <long>)
+0: keyboard, 1: controller
+NETWORK SAFE: Yes
+
+(<void> details_quality_set <long>)
+0: low, 1: medium, 2: high
+NETWORK SAFE: Yes
+
+(<void> display_brightness_set <long>)
+0-4
+NETWORK SAFE: Yes
+
+(<void> display_contrast_set <long>)
+
+NETWORK SAFE: Yes
+
+(<void> display_hints_set <boolean>)
+
+NETWORK SAFE: Yes
+
+(<void> effects_quality_set <long>)
+0: low, 1: medium, 2: high
+NETWORK SAFE: Yes
+
+(<void> fullscreen_set <boolean>)
+
+NETWORK SAFE: Yes
+
+(<void> hide_watermark_set <boolean>)
+
+NETWORK SAFE: Yes
+
+(<void> hud_shake_set <boolean>)
+
+NETWORK SAFE: Yes
+
+(<void> lighting_quality_set <long>)
+0: low, 1: medium, 2: high
+NETWORK SAFE: Yes
+
+(<void> master_volume_set <long>)
+
+NETWORK SAFE: Yes
+
+(<void> motion_blur_set <boolean>)
+
+NETWORK SAFE: Yes
+
+(<void> mouse_acceleration_set <long>)
+
+NETWORK SAFE: Yes
+
+(<void> mouse_filter_set <boolean>)
+
+NETWORK SAFE: Yes
+
+(<void> mouse_inversion_set <boolean>)
+
+NETWORK SAFE: Yes
+
+(<void> mouse_sensitivity_horizontal_set <long>)
+
+NETWORK SAFE: Yes
+
+(<void> mouse_sensitivity_vehicle_horizontal_set <long>)
+
+NETWORK SAFE: Yes
+
+(<void> mouse_sensitivity_vehicle_vertical_set <long>)
+
+NETWORK SAFE: Yes
+
+(<void> mouse_sensitivity_vertical_set <long>)
+
+NETWORK SAFE: Yes
+
+(<void> music_volume_set <long>)
+
+NETWORK SAFE: Yes
+
+(<void> postprocessing_quality_set <long>)
+0: low, 1: medium, 2: high
+NETWORK SAFE: Yes
+
+(<void> screen_resolution_set <long> <long>)
+width height
+NETWORK SAFE: Yes
+
+(<void> sfx_volume_set <long>)
+sfx volume
+NETWORK SAFE: Yes
+
+(<void> shadow_quality_set <long>)
+0: low, 1: medium, 2: high
+NETWORK SAFE: Yes
+
+(<void> subtitle_setting_set <long>)
+0: automatic, 1: enabled, 2: disabled
+NETWORK SAFE: Yes
+
+(<void> texture_filtering_quality_set <long>)
+0: low, 1: medium, 2: high
+NETWORK SAFE: Yes
+
+(<void> texture_resolution_quality_set <long>)
+0: low, 1: medium, 2: high
+NETWORK SAFE: Yes
+
+(<void> toggle_crouch_set <boolean>)
+
+NETWORK SAFE: Yes
+
+(<void> vsync_set <boolean>)
+
+NETWORK SAFE: Yes
+
