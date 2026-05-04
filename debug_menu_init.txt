@@ -203,6 +203,7 @@
 	<item type = global name = "bump possession" variable = "cheat_bump_possession">
 	<item type = global name = "jetpack" variable = "cheat_jetpack">
 	<item type = global name = "medusa" variable = "cheat_medusa">
+	<item type = global name = "porcupine" variable = "cheat_porcupine">
 	<item type = command name = "erase all AI" variable = "ai_erase_all">
 	<item type = command name = "active camouflage ON" variable = "cheat_active_camouflage 1">
 	<item type = command name = "active camouflage OFF" variable = "cheat_active_camouflage 0">
